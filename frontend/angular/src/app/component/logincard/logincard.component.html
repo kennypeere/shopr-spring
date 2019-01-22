@@ -1,0 +1,16 @@
+
+<mat-tab-group>
+  <mat-tab label="Login">
+    <mat-form-field>
+      <mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-tab>
+  <mat-tab label="Register">
+    <h1>Some more tab content</h1>
+    <p>...</p>
+  </mat-tab>
+</mat-tab-group>
