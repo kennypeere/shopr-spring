@@ -1,4 +1,24 @@
 package com.realdolmen.backend.domain;
 
-public class NonFiction {
+import javax.persistence.*;
+
+@Entity
+@Table(name="non_fiction")
+@DiscriminatorValue("NON_FICTION")
+public class NonFiction extends Article {
+    @Enumerated(EnumType.STRING)
+    private NonFictionSubject subject;
+
+    public NonFictionSubject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(NonFictionSubject subject) {
+        this.subject = subject;
+    }
+
+    @Override
+    public String getDisplayValue(){
+        return "Non Fiction";
+    }
 }

@@ -1,6 +1,6 @@
 # set schema shopr2;
 
-CREATE TABLE user (
+CREATE TABLE users (
   id                INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name              VARCHAR(255) NOT NULL,
   first_name        VARCHAR(255) NOT NULL
@@ -58,7 +58,7 @@ CREATE TABLE orders
   id                INT PRIMARY KEY NOT NULL,
   order_time        TIMESTAMP,
   user_id           INT,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE orderline
@@ -79,13 +79,13 @@ CREATE TABLE rating
   article_id        INT,
   user_id           INT,
   FOREIGN KEY (article_id) REFERENCES article(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE user_favourites
 (
   user_id           INT NOT NULL,
   article_id        INT NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (article_id) REFERENCES article(id)
 );

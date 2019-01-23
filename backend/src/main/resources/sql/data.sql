@@ -1,8 +1,8 @@
-insert into user(id, name, first_name) values(1, 'Peere', 'Kenny');
-insert into user(id, name, first_name) values(2, 'Vermeulen', 'Joske');
-insert into user(id, name, first_name) values(3, 'Pot', 'Pol');
-insert into user(id, name, first_name) values(4, 'De Verschrikkelijke', 'Hagar');
-insert into user(id, name, first_name) values(5, 'Castro', 'Fidel');
+insert into users(id, name, first_name) values(1, 'Peere', 'Kenny');
+insert into users(id, name, first_name) values(2, 'Vermeulen', 'Joske');
+insert into users(id, name, first_name) values(3, 'Pot', 'Pol');
+insert into users(id, name, first_name) values(4, 'De Verschrikkelijke', 'Hagar');
+insert into users(id, name, first_name) values(5, 'Castro', 'Fidel');
 
 insert into article(id, title, price, supplier_id, types) values(1, '4 Seasons', 9.99, '1', 'LP');
 insert into article(id, title, price, supplier_id, types) values(2, 'Fear Of The Dark', 14.99, '3', 'LP');
@@ -186,7 +186,8 @@ insert into orderline(id, amount, article_id, order_id) values (19, 2, 1, 8);
 insert into orderline(id, amount, article_id, order_id) values (20, 9, 16, 8);
 insert into orderline(id, amount, article_id, order_id) values (21, 1, 26, 8);
 insert into orderline(id, amount, article_id, order_id) values (22, 4, 14, 8);
-insert into orderline(id, amount, article_id, order_id) values (23, 2, 53, 8);
+
+insert into orderline(id, amount, article_id, order_id) values (23, 2, 53, 3);
 
 
 

@@ -1,4 +1,9 @@
 package com.realdolmen.backend.repository;
 
-public interface GameRepository {
+import com.realdolmen.backend.domain.Game;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface GameRepository extends JpaRepository<Game, Integer> {
 }
