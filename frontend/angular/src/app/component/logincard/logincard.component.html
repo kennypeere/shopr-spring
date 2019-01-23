@@ -2,9 +2,9 @@
 <mat-tab-group>
   <mat-tab label="Login">
     <mat-form-field>
-      <mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-select placeholder="Select user" [(ngModel)]="selectedValue" name="user">
+        <mat-option *ngFor="let user of users" [value]="food.value">
+          {{user.firstName}} {{user.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>

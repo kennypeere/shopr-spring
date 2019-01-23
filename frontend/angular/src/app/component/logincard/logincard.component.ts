@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logincard.component.css']
 })
 export class LogincardComponent implements OnInit {
+  users: User[]
+
 
   constructor() { }
 
