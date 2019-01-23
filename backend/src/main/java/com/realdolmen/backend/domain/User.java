@@ -20,10 +20,6 @@ public class User implements Serializable {
     @Column(name="first_name")
     private String firstName;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    @Fetch(FetchMode.SUBSELECT)
-    private List<Order> orders;
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_favourites",
@@ -55,13 +51,6 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 
     public List<Article> getFavourites() {
         return favourites;

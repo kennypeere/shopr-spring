@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.Article;
 import com.realdolmen.backend.service.ArticleService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,12 +33,13 @@ public class ArticleController implements Serializable {
         articleService.save(article);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<Article> findAll(){
         return articleService.findAll();
     }
 
-    public Optional<Article> findById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Optional<Article> findById(@PathVariable Integer id){
         return articleService.findById(id);
     }
 

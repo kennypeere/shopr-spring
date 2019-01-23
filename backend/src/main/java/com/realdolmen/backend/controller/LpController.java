@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.Lp;
 import com.realdolmen.backend.service.LpService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,12 +33,13 @@ public class LpController implements Serializable {
         lpService.save(lp);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<Lp> findAll(){
         return lpService.findAll();
     }
 
-    public Optional<Lp> findById(Integer id){
+    @GetMapping(path = "{id}")
+    public Optional<Lp> findById(@PathVariable Integer id){
         return lpService.findById(id);
     }
 

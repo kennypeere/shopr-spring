@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @DiscriminatorValue("FICTION")
-public class Fiction extends Article {
+public class Fiction extends Book {
     @Enumerated(EnumType.STRING)
     private FictionGenre genre;
 

@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.service.GameService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,12 +33,13 @@ public class GameController implements Serializable {
         gameService.save(game);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<Game> findAll(){
         return gameService.findAll();
     }
 
-    public Optional<Game> findById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Optional<Game> findById(@PathVariable Integer id){
         return gameService.findById(id);
     }
 

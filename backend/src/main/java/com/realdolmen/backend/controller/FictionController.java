@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.Fiction;
 import com.realdolmen.backend.service.FictionService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,12 +25,13 @@ public class FictionController implements Serializable {
         fictionService.save(fiction);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<Fiction> findAll(){
         return fictionService.findAll();
     }
 
-    public Optional<Fiction> findById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Optional<Fiction> findById(@PathVariable Integer id){
         return fictionService.findById(id);
     }
 

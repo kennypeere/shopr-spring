@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.NonFiction;
 import com.realdolmen.backend.service.NonFictionService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,12 +33,13 @@ public class NonFictionController implements Serializable {
         nonFictionService.save(nonFiction);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<NonFiction> findAll(){
         return nonFictionService.findAll();
     }
 
-    public Optional<NonFiction> findById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Optional<NonFiction> findById(@PathVariable Integer id){
         return nonFictionService.findById(id);
     }
 

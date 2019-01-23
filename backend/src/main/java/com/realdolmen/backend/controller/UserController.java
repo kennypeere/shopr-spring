@@ -3,6 +3,7 @@ package com.realdolmen.backend.controller;
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,7 +38,7 @@ public class UserController implements Serializable {
         this.currentUser = currentUser;
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<User> findAll(){
         return userService.findAll();
     }
@@ -54,7 +55,8 @@ public class UserController implements Serializable {
         userService.deleteById(id);
     }
 
-    public Optional<User> findById(Integer id){
+    @GetMapping(path = "/{id}")
+    public Optional<User> findById(@PathVariable Integer id){
         return userService.findById(id);
     }
 }
