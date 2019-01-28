@@ -2,10 +2,10 @@ package com.realdolmen.backend.service;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.repository.UserRepository;
+import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -23,8 +23,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> findById(Integer id){
-        return userRepository.findById(id);
+    public User findById(Integer id) throws NotFoundException {
+        return userRepository.findById(id).orElseThrow(() -> new NotFoundException("User is Not found"));
     }
 
     public void delete(User user){

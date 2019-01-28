@@ -2,14 +2,12 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import javassist.NotFoundException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 
 @RequestMapping(path = "/user")
 @RestController
@@ -18,7 +16,7 @@ public class UserController implements Serializable {
     private User currentUser;
     private UserService userService;
 
-    public UserController(UserService userService){
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -39,24 +37,29 @@ public class UserController implements Serializable {
     }
 
     @GetMapping(path = "")
-    public List<User> findAll(){
+    public List<User> findAll() {
         return userService.findAll();
     }
 
-    public void save(User user){
+    @PostMapping(path = "/register")
+    public void save(@RequestBody User user) {
         userService.save(user);
     }
 
-    public void delete(User user){
+    public void delete(User user) {
         userService.delete(user);
     }
 
-    public void deleteById(Integer id){
+    public void deleteById(Integer id) {
         userService.deleteById(id);
     }
 
-    @GetMapping(path = "/{id}")
-    public Optional<User> findById(@PathVariable Integer id){
-        return userService.findById(id);
+    @PostMapping(path = "/find")
+    public ResponseEntity<User> findById(@RequestBody User user) {
+        try {
+            return ResponseEntity.ok().body(userService.findById(user.getId()));
+        } catch (NotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

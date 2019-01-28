@@ -1,8 +1,8 @@
-insert into users(id, name, first_name) values(1, 'Peere', 'Kenny');
-insert into users(id, name, first_name) values(2, 'Vermeulen', 'Joske');
-insert into users(id, name, first_name) values(3, 'Pot', 'Pol');
-insert into users(id, name, first_name) values(4, 'De Verschrikkelijke', 'Hagar');
-insert into users(id, name, first_name) values(5, 'Castro', 'Fidel');
+insert into users(id, last_name, first_name) values(1, 'Peere', 'Kenny');
+insert into users(id, last_name, first_name) values(2, 'Vermeulen', 'Joske');
+insert into users(id, last_name, first_name) values(3, 'Pot', 'Pol');
+insert into users(id, last_name, first_name) values(4, 'De Verschrikkelijke', 'Hagar');
+insert into users(id, last_name, first_name) values(5, 'Castro', 'Fidel');
 
 insert into article(id, title, price, supplier_id, types) values(1, '4 Seasons', 9.99, '1', 'LP');
 insert into article(id, title, price, supplier_id, types) values(2, 'Fear Of The Dark', 14.99, '3', 'LP');

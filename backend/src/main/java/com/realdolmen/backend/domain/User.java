@@ -1,8 +1,5 @@
 package com.realdolmen.backend.domain;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,11 +8,12 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
 
-    private String name;
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name="first_name")
     private String firstName;
@@ -35,12 +33,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {

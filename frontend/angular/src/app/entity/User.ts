@@ -1,15 +1,16 @@
-class User{
-  private _id: number;
-  private _name: string;
+export class User{
+
+  private _id?: number;
+  private _lastName: string;
   private _firstName: string;
 
 
 
-  constructor(id: number, name: string, firstName: string) {
-    this._id = id;
-    this._name = name;
-    this._firstName = firstName;
+  constructor() {
+
   }
+
+
 
   get id(): number {
     return this._id;
@@ -19,12 +20,13 @@ class User{
     this._id = value;
   }
 
-  get name(): string {
-    return this._name;
+
+  get lastName(): string {
+    return this._lastName;
   }
 
-  set name(value: string) {
-    this._name = value;
+  set lastName(value: string) {
+    this._lastName = value;
   }
 
   get firstName(): string {
@@ -34,5 +36,4 @@ class User{
   set firstName(value: string) {
     this._firstName = value;
   }
-
 }

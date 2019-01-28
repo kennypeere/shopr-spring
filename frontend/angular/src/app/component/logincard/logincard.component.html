@@ -1,16 +1,37 @@
+<mat-card class="login">
+  <mat-card-title>Login</mat-card-title>
+  <mat-tab-group mat-align-tabs="center" (selectedTabChange)="fetchUsers()">
 
-<mat-tab-group>
-  <mat-tab label="Login">
-    <mat-form-field>
-      <mat-select placeholder="Select user" [(ngModel)]="selectedValue" name="user">
-        <mat-option *ngFor="let user of users" [value]="food.value">
-          {{user.firstName}} {{user.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-tab>
-  <mat-tab label="Register">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-</mat-tab-group>
+    <mat-tab label="Login">
+      <form>
+        <mat-form-field>
+          <mat-select placeholder="Select user" name="user" [(ngModel)]="selectedUser">
+            <mat-option *ngFor="let user of users" [value]="user">
+              {{user.firstName}} {{user.lastName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br/>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="Register">
+      <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <mat-form-field>
+          <input matInput placeholder="First name" formControlName="firstName">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput placeholder="Last name" formControlName="lastName">
+        </mat-form-field>
+        <br/>
+        <button mat-raised-button color="primary" type="submit">Register</button>
+      </form>
+    </mat-tab>
+
+  </mat-tab-group>
+</mat-card>
+
+
+<!--[(ngModel)]="selectedValue"-->
