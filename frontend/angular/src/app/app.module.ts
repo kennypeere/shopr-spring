@@ -12,16 +12,20 @@ import {
   MatCheckboxModule,
   MatFormFieldModule, MatInputModule, MatOptionModule,
   MatSelectModule,
-  MatTabsModule
+  MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FullpageComponent } from './component/fullpage/fullpage.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogincardComponent
+    LogincardComponent,
+    FullpageComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,
@@ -37,7 +41,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatOptionModule,
     MatInputModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
