@@ -55,9 +55,9 @@ public class UserController implements Serializable {
     }
 
     @PostMapping(path = "/find")
-    public ResponseEntity<User> findById(@RequestBody User user) {
+    public ResponseEntity<User> findById(@RequestBody Integer userId) {
         try {
-            return ResponseEntity.ok().body(userService.findById(user.getId()));
+            return ResponseEntity.ok().body(userService.findById(userId));
         } catch (NotFoundException e) {
             return ResponseEntity.notFound().build();
         }

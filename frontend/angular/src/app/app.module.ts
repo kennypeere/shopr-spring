@@ -11,7 +11,7 @@ import {
   MatButtonModule, MatCardModule,
   MatCheckboxModule, MatPaginatorModule,
   MatFormFieldModule, MatInputModule, MatOptionModule,
-  MatSelectModule, MatTableModule,
+  MatSelectModule, MatTableModule, MatBadgeModule,
   MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
@@ -53,6 +53,7 @@ import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-data
     MatMenuModule,
     MatToolbarModule,
     MatTableModule,
+    MatBadgeModule,
     MatPaginatorModule
   ],
   providers: [UserService],

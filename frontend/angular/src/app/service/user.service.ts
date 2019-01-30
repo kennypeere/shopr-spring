@@ -30,7 +30,9 @@ export class UserService {
     return this.httpClient.post<User>("/user/find", userId)
       .toPromise()
       .then(foundUser => {
-        sessionStorage.setItem("loggedInUser", foundUser.id.toString());
+        sessionStorage.setItem("loggedInUserId", foundUser.id.toString());
+        sessionStorage.setItem("loggedInUserFirstName", foundUser.firstName.toString());
+        sessionStorage.setItem("loggedInUserLastName", foundUser.lastName.toString());
         return foundUser;
       })
       .catch(reason => this.handleError(reason));
@@ -39,4 +41,13 @@ export class UserService {
   private handleError(error: any) {
     return Promise.reject(error.message | error);
   }
+
+  getLoggedInUserFirstName(): string{
+    return sessionStorage.getItem("loggedInUserFirstName");
+  }
+
+  resetLoggedInUser(): void{
+    sessionStorage.clear();
+  }
+
 }
