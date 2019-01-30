@@ -6,6 +6,10 @@ import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-data
 import { GameDatatableComponent } from "./component/datatable/game-datatable/game-datatable.component";
 import { FictionDatatableComponent } from "./component/datatable/fiction-datatable/fiction-datatable.component";
 import { NonFictionDatatableComponent } from "./component/datatable/non-fiction-datatable/non-fiction-datatable.component";
+import {LpDetailComponent} from "./component/details/lp-detail/lp-detail.component";
+import {GameDetailComponent} from "./component/details/game-detail/game-detail.component";
+import {FictionDetailComponent} from "./component/details/fiction-detail/fiction-detail.component";
+import {NonFictionDetailComponent} from "./component/details/non-fiction-detail/non-fiction-detail.component";
 
 const routes: Routes = [
   { path:'', component: GeneralpageComponent },
@@ -13,7 +17,11 @@ const routes: Routes = [
   { path:'lp-datatable', component: LpDatatableComponent },
   { path:'game-datatable', component: GameDatatableComponent },
   { path:'fiction-datatable', component: FictionDatatableComponent },
-  { path:'non-fiction-datatable', component: NonFictionDatatableComponent }
+  { path:'non-fiction-datatable', component: NonFictionDatatableComponent },
+  { path:'lp/:id', component: LpDetailComponent},
+  { path:'game/:id', component: GameDetailComponent},
+  { path:'fiction/:id', component: FictionDetailComponent},
+  { path:'non-fiction/:id', component: NonFictionDetailComponent}
 ];
 
 @NgModule({

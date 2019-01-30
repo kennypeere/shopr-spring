@@ -24,6 +24,10 @@ import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-data
 import { GameDatatableComponent } from './component/datatable/game-datatable/game-datatable.component';
 import { FictionDatatableComponent } from './component/datatable/fiction-datatable/fiction-datatable.component';
 import { NonFictionDatatableComponent } from './component/datatable/non-fiction-datatable/non-fiction-datatable.component';
+import { LpDetailComponent } from './component/details/lp-detail/lp-detail.component';
+import { GameDetailComponent } from './component/details/game-detail/game-detail.component';
+import { FictionDetailComponent } from './component/details/fiction-detail/fiction-detail.component';
+import { NonFictionDetailComponent } from './component/details/non-fiction-detail/non-fiction-detail.component';
 
 
 @NgModule({
@@ -37,7 +41,11 @@ import { NonFictionDatatableComponent } from './component/datatable/non-fiction-
     LpDatatableComponent,
     GameDatatableComponent,
     FictionDatatableComponent,
-    NonFictionDatatableComponent
+    NonFictionDatatableComponent,
+    LpDetailComponent,
+    GameDetailComponent,
+    FictionDetailComponent,
+    NonFictionDetailComponent,
   ],
   imports: [
     FormsModule,
