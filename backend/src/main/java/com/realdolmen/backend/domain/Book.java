@@ -1,11 +1,16 @@
 package com.realdolmen.backend.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class Book extends Article {
+@Entity(name="book")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Book extends Article {
     @Size(max = 100)
     @NotNull
     @Column(nullable = false)

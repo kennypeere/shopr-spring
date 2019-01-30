@@ -1,6 +1,7 @@
 # set schema shopr2;
 
-CREATE TABLE users (
+CREATE TABLE users
+(
   id                INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   last_name         VARCHAR(255) NOT NULL,
   first_name        VARCHAR(255) NOT NULL
@@ -15,25 +16,28 @@ CREATE TABLE article
   title             VARCHAR(100)
 );
 
-CREATE TABLE fiction
+CREATE TABLE book
 (
   id                INT NOT NULL,
   author            VARCHAR(100),
   isbn              VARCHAR(17),
   number_of_pages   INT,
+  FOREIGN KEY (id) REFERENCES article(id)
+);
+
+CREATE TABLE fiction
+(
+  id                INT NOT NULL,
   genre             VARCHAR(255),
   summary           VARCHAR(255),
-  FOREIGN KEY (id) REFERENCES article(id)
+  FOREIGN KEY (id) REFERENCES book(id)
 );
 
 CREATE TABLE non_fiction
 (
   id                INT NOT NULL,
-  author            VARCHAR(100),
-  isbn              VARCHAR(17),
-  number_of_pages   INT,
   subject           VARCHAR(255),
-  FOREIGN KEY (id) REFERENCES article(id)
+  FOREIGN KEY (id) REFERENCES book(id)
 );
 
 CREATE TABLE lp

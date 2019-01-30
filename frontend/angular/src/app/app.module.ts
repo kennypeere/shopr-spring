@@ -21,6 +21,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { GeneralpageComponent } from './component/generalpage/generalpage.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-datatable.component";
+import { GameDatatableComponent } from './component/datatable/game-datatable/game-datatable.component';
+import { FictionDatatableComponent } from './component/datatable/fiction-datatable/fiction-datatable.component';
+import { NonFictionDatatableComponent } from './component/datatable/non-fiction-datatable/non-fiction-datatable.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-data
     HeaderComponent,
     GeneralpageComponent,
     FooterComponent,
-    LpDatatableComponent
+    LpDatatableComponent,
+    GameDatatableComponent,
+    FictionDatatableComponent,
+    NonFictionDatatableComponent
   ],
   imports: [
     FormsModule,
