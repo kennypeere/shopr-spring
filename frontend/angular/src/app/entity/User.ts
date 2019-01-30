@@ -4,13 +4,8 @@ export class User{
   private _lastName: string;
   private _firstName: string;
 
-
-
   constructor() {
-
   }
-
-
 
   get id(): number {
     return this._id;

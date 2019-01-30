@@ -9,23 +9,29 @@ import {UserService} from "./service/user.service";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatPaginatorModule,
   MatFormFieldModule, MatInputModule, MatOptionModule,
-  MatSelectModule,
+  MatSelectModule, MatTableModule,
   MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FullpageComponent } from './component/fullpage/fullpage.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { HeaderComponent } from './component/header/header.component';
+import { GeneralpageComponent } from './component/generalpage/generalpage.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-datatable.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LogincardComponent,
-    FullpageComponent,
-    NavbarComponent
+    NavbarComponent,
+    HeaderComponent,
+    GeneralpageComponent,
+    FooterComponent,
+    LpDatatableComponent
   ],
   imports: [
     FormsModule,
@@ -45,7 +51,9 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     MatIconModule,
     MatGridListModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

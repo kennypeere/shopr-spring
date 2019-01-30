@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FullpageComponent } from "./component/fullpage/fullpage.component";
+import { GeneralpageComponent } from "./component/generalpage/generalpage.component";
+import { LogincardComponent } from "./component/logincard/logincard.component";
+import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-datatable.component";
 
 const routes: Routes = [
-  {
-    path:'',
-    component: FullpageComponent
-  }
+  { path:'', component: GeneralpageComponent },
+  { path:'login', component: LogincardComponent },
+  { path:'lp-datatable', component: LpDatatableComponent }
 ];
 
 @NgModule({
