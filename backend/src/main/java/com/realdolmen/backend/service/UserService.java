@@ -35,6 +35,11 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    // TODO: mbv spring data zoeken of article in user favourites zit
+//    public boolean hasFavourite(Integer userId, Integer articleId){
+//        return userRepository.
+//    }
+
 
 
 

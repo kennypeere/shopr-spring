@@ -62,4 +62,9 @@ public class UserController implements Serializable {
             return ResponseEntity.notFound().build();
         }
     }
+
+    // TODO: postmapping juist zetten
+//    public boolean hasFavourite(){
+//        return userService.hasFavourite(userId, articleId);
+//    }
 }

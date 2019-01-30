@@ -50,4 +50,9 @@ export class UserService {
     sessionStorage.clear();
   }
 
+  // TODO: functie verder implementeren
+  // isFavourite(articleId: number): boolean{
+  //   let userId: number = sessionStorage.getItem("loggedInUserId");
+  // }
+
 }

@@ -12,7 +12,7 @@ import {
   MatCheckboxModule, MatPaginatorModule,
   MatFormFieldModule, MatInputModule, MatOptionModule,
   MatSelectModule, MatTableModule, MatBadgeModule,
-  MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule, MatSortModule
+  MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule, MatSortModule, MatTooltipModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -69,7 +69,8 @@ import { NonFictionDetailComponent } from './component/details/non-fiction-detai
     MatTableModule,
     MatBadgeModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatTooltipModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
