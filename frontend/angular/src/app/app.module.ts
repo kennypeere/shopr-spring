@@ -8,11 +8,24 @@ import {UserService} from "./service/user.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCardModule,
-  MatCheckboxModule, MatPaginatorModule,
-  MatFormFieldModule, MatInputModule, MatOptionModule,
-  MatSelectModule, MatTableModule, MatBadgeModule,
-  MatTabsModule, MatIconModule, MatGridListModule, MatMenuModule, MatToolbarModule, MatSortModule, MatTooltipModule
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatPaginatorModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatTableModule,
+  MatBadgeModule,
+  MatTabsModule,
+  MatIconModule,
+  MatGridListModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatSortModule,
+  MatTooltipModule,
+  MatSliderModule, MatRadioModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -28,6 +41,7 @@ import { LpDetailComponent } from './component/details/lp-detail/lp-detail.compo
 import { GameDetailComponent } from './component/details/game-detail/game-detail.component';
 import { FictionDetailComponent } from './component/details/fiction-detail/fiction-detail.component';
 import { NonFictionDetailComponent } from './component/details/non-fiction-detail/non-fiction-detail.component';
+import { SearchComponent } from './component/search/search.component';
 
 
 @NgModule({
@@ -46,6 +60,7 @@ import { NonFictionDetailComponent } from './component/details/non-fiction-detai
     GameDetailComponent,
     FictionDetailComponent,
     NonFictionDetailComponent,
+    SearchComponent,
   ],
   imports: [
     FormsModule,
@@ -70,7 +85,9 @@ import { NonFictionDetailComponent } from './component/details/non-fiction-detai
     MatBadgeModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSliderModule,
+    MatRadioModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

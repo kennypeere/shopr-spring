@@ -2,6 +2,8 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.Article;
 import com.realdolmen.backend.service.ArticleService;
+import javassist.NotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,5 +51,23 @@ public class ArticleController implements Serializable {
 
     public void deleteById(Integer id){
         articleService.deleteById(id);
+    }
+
+    @GetMapping(path = "/lowest")
+    public ResponseEntity fetchLowestPrice(){
+        try {
+            return ResponseEntity.ok().body(articleService.fetchLowestPrice());
+        } catch (NotFoundException e) {
+           return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping(path = "/highest")
+    public ResponseEntity fetchHighestPrice(){
+        try {
+            return ResponseEntity.ok().body(articleService.fetchHighestPrice());
+        } catch (NotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

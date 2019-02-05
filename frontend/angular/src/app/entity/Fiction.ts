@@ -16,7 +16,7 @@ export class Fiction extends Book{
     this._genre = value;
   }
 
-  get summery(): string {
+  get summary(): string {
     return this._summery;
   }
 
