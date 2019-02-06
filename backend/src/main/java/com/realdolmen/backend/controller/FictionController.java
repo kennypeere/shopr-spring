@@ -2,10 +2,7 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.Fiction;
 import com.realdolmen.backend.service.FictionService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +18,8 @@ public class FictionController implements Serializable {
         this.fictionService = fictionService;
     }
 
-    public void save(Fiction fiction){
+    @PostMapping(path = "/add")
+    public void save(@RequestBody Fiction fiction){
         fictionService.save(fiction);
     }
 

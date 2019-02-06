@@ -4,10 +4,7 @@ import com.realdolmen.backend.domain.Article;
 import com.realdolmen.backend.service.ArticleService;
 import javassist.NotFoundException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -31,7 +28,8 @@ public class ArticleController implements Serializable {
         this.newArticle = newArticle;
     }
 
-    public void save(Article article){
+    @PostMapping(path = "/add")
+    public void save(@RequestBody Article article){
         articleService.save(article);
     }
 
@@ -70,4 +68,6 @@ public class ArticleController implements Serializable {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 }

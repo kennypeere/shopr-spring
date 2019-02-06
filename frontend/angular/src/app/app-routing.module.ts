@@ -10,6 +10,10 @@ import {LpDetailComponent} from "./component/details/lp-detail/lp-detail.compone
 import {GameDetailComponent} from "./component/details/game-detail/game-detail.component";
 import {FictionDetailComponent} from "./component/details/fiction-detail/fiction-detail.component";
 import {NonFictionDetailComponent} from "./component/details/non-fiction-detail/non-fiction-detail.component";
+import {AddLpComponent} from "./component/add/add-lp/add-lp.component";
+import {AddGameComponent} from "./component/add/add-game/add-game.component";
+import {AddFictionComponent} from "./component/add/add-fiction/add-fiction.component";
+import {AddNonFictionComponent} from "./component/add/add-non-fiction/add-non-fiction.component";
 
 const routes: Routes = [
   { path:'', component: GeneralpageComponent },
@@ -21,7 +25,11 @@ const routes: Routes = [
   { path:'lp/:id', component: LpDetailComponent},
   { path:'game/:id', component: GameDetailComponent},
   { path:'fiction/:id', component: FictionDetailComponent},
-  { path:'non-fiction/:id', component: NonFictionDetailComponent}
+  { path:'non-fiction/:id', component: NonFictionDetailComponent},
+  { path:'add/lp', component: AddLpComponent},
+  { path:'add/game', component: AddGameComponent},
+  { path:'add/fiction', component: AddFictionComponent},
+  { path:'add/non-fiction', component: AddNonFictionComponent},
 ];
 
 @NgModule({

@@ -8,40 +8,46 @@ import {UserService} from "./service/user.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+  MatBadgeModule,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatPaginatorModule,
   MatFormFieldModule,
-  MatInputModule,
-  MatOptionModule,
-  MatSelectModule,
-  MatTableModule,
-  MatBadgeModule,
-  MatTabsModule,
-  MatIconModule,
   MatGridListModule,
+  MatIconModule,
+  MatInputModule,
   MatMenuModule,
-  MatToolbarModule,
+  MatOptionModule,
+  MatPaginatorModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatSnackBarModule,
   MatSortModule,
-  MatTooltipModule,
-  MatSliderModule, MatRadioModule
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { NavbarComponent } from './component/navbar/navbar.component';
-import { HeaderComponent } from './component/header/header.component';
-import { GeneralpageComponent } from './component/generalpage/generalpage.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { LpDatatableComponent } from "./component/datatable/lp-datatable/lp-datatable.component";
-import { GameDatatableComponent } from './component/datatable/game-datatable/game-datatable.component';
-import { FictionDatatableComponent } from './component/datatable/fiction-datatable/fiction-datatable.component';
-import { NonFictionDatatableComponent } from './component/datatable/non-fiction-datatable/non-fiction-datatable.component';
-import { LpDetailComponent } from './component/details/lp-detail/lp-detail.component';
-import { GameDetailComponent } from './component/details/game-detail/game-detail.component';
-import { FictionDetailComponent } from './component/details/fiction-detail/fiction-detail.component';
-import { NonFictionDetailComponent } from './component/details/non-fiction-detail/non-fiction-detail.component';
-import { SearchComponent } from './component/search/search.component';
+import {NavbarComponent} from './component/navbar/navbar.component';
+import {HeaderComponent} from './component/header/header.component';
+import {GeneralpageComponent} from './component/generalpage/generalpage.component';
+import {FooterComponent} from './component/footer/footer.component';
+import {LpDatatableComponent} from "./component/datatable/lp-datatable/lp-datatable.component";
+import {GameDatatableComponent} from './component/datatable/game-datatable/game-datatable.component';
+import {FictionDatatableComponent} from './component/datatable/fiction-datatable/fiction-datatable.component';
+import {NonFictionDatatableComponent} from './component/datatable/non-fiction-datatable/non-fiction-datatable.component';
+import {LpDetailComponent} from './component/details/lp-detail/lp-detail.component';
+import {GameDetailComponent} from './component/details/game-detail/game-detail.component';
+import {FictionDetailComponent} from './component/details/fiction-detail/fiction-detail.component';
+import {NonFictionDetailComponent} from './component/details/non-fiction-detail/non-fiction-detail.component';
+import {SearchComponent} from './component/search/search.component';
+import {AddLpComponent} from './component/add/add-lp/add-lp.component';
+import {AddGameComponent} from './component/add/add-game/add-game.component';
+import {AddFictionComponent} from './component/add/add-fiction/add-fiction.component';
+import {AddNonFictionComponent} from './component/add/add-non-fiction/add-non-fiction.component';
 
 
 @NgModule({
@@ -61,6 +67,10 @@ import { SearchComponent } from './component/search/search.component';
     FictionDetailComponent,
     NonFictionDetailComponent,
     SearchComponent,
+    AddLpComponent,
+    AddGameComponent,
+    AddFictionComponent,
+    AddNonFictionComponent,
   ],
   imports: [
     FormsModule,
@@ -87,7 +97,8 @@ import { SearchComponent } from './component/search/search.component';
     MatSortModule,
     MatTooltipModule,
     MatSliderModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

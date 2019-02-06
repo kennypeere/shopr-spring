@@ -10,7 +10,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class LogincardComponent implements OnInit {
   users: User[];
-  newUser: User = new User();
+  // newUser: User = new User();
   registerForm: FormGroup;
   selectedUser: User;
 
@@ -26,7 +26,7 @@ export class LogincardComponent implements OnInit {
 
   registerUser(): void {
     this.userService.registerUser(this.registerForm.value);
-    this.newUser = new User();
+    // this.newUser = new User();
   }
 
   fetchUsers(): void {

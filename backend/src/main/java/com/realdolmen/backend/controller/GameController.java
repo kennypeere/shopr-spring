@@ -2,10 +2,7 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.service.GameService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -29,7 +26,8 @@ public class GameController implements Serializable {
         this.newGame = newGame;
     }
 
-    public void save(Game game){
+    @PostMapping(path = "/add")
+    public void save(@RequestBody Game game){
         gameService.save(game);
     }
 
