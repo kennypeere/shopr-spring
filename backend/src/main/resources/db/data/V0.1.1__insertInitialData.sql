@@ -218,6 +218,3 @@ insert into orderline(id, amount, article_id, order_id) values (21, 1, 26, 8);
 insert into orderline(id, amount, article_id, order_id) values (22, 4, 14, 8);
 
 insert into orderline(id, amount, article_id, order_id) values (23, 2, 53, 3);
-
-
-

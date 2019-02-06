@@ -48,6 +48,7 @@ import {AddLpComponent} from './component/add/add-lp/add-lp.component';
 import {AddGameComponent} from './component/add/add-game/add-game.component';
 import {AddFictionComponent} from './component/add/add-fiction/add-fiction.component';
 import {AddNonFictionComponent} from './component/add/add-non-fiction/add-non-fiction.component';
+import {TextMaskModule} from "angular2-text-mask";
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import {AddNonFictionComponent} from './component/add/add-non-fiction/add-non-fi
     MatTooltipModule,
     MatSliderModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TextMaskModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
