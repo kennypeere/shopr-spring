@@ -49,6 +49,9 @@ import {AddGameComponent} from './component/add/add-game/add-game.component';
 import {AddFictionComponent} from './component/add/add-fiction/add-fiction.component';
 import {AddNonFictionComponent} from './component/add/add-non-fiction/add-non-fiction.component';
 import {TextMaskModule} from "angular2-text-mask";
+import { IsbnInputComponent } from './component/input/isbn-input/isbn-input.component';
+import { FormFieldCustomControlComponent } from './component/input/form-field-custom-control/form-field-custom-control.component';
+import { PriceInputComponent } from './component/input/price-input/price-input.component';
 
 
 @NgModule({
@@ -72,6 +75,9 @@ import {TextMaskModule} from "angular2-text-mask";
     AddGameComponent,
     AddFictionComponent,
     AddNonFictionComponent,
+    IsbnInputComponent,
+    FormFieldCustomControlComponent,
+    PriceInputComponent,
   ],
   imports: [
     FormsModule,

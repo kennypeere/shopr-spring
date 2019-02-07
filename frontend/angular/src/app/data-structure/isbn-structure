@@ -1,0 +1,4 @@
+//
+// export class IsbnStructure {
+//   constructor(public segment1: string, public segment2: string, public segment3: string, public segment4: string, public segment5: string) {}
+// }
