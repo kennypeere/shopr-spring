@@ -1,0 +1,54 @@
+<mat-card class="addCard">
+  <mat-card-header>
+    <mat-card-title>Add LP</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="addLpForm" (ngSubmit)="addLp()">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Artist" formControlName="artist" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-select [required]="true" placeholder="Select genre" formControlName="genre">
+            <mat-option value="CLASSICAL">Classical</mat-option>
+            <mat-option value="DANCE">Dance</mat-option>
+            <mat-option value="HIPHOP">Hip-hop</mat-option>
+            <mat-option value="POP">Pop</mat-option>
+            <mat-option value="RNB">R&B</mat-option>
+            <mat-option value="ROCK">Rock</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Supplier id" formControlName="supplierId" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Price" formControlName="price" required="true">
+          <span matSuffix>€</span>
+        </mat-form-field>
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Create article</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card-content>
+
+
+</mat-card>

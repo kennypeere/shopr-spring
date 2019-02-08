@@ -1,0 +1,19 @@
+table {
+  width: 70%;
+  margin: 1.5% auto;
+}
+.mat-sort-header-container {
+  align-items: center;
+}
+.smallColumn {
+  width: 5%;
+}
+.mediumColumn{
+  width:10%;
+}
+.largeColumn{
+  width:35%;
+}
+.paginator{
+  margin: 0 auto;
+}

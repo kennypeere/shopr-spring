@@ -1,0 +1,49 @@
+<mat-card class="detailCard">
+  <mat-card-header>
+    <mat-card-title class="bold">{{fiction.title}}</mat-card-title>
+    <mat-card-subtitle>Author: {{fiction.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="grid-container">
+      <span class="grid-item">Genre:</span>
+      <span class="grid-item">{{fiction.genre}}</span>
+      <span class="grid-item">Number of pages:</span>
+      <span class="grid-item">{{fiction.numberOfPages}}</span>
+      <span class="grid-item">ISBN:</span>
+      <span class="grid-item">{{fiction.isbn}}</span>
+      <span class="grid-item">Synopsis:</span>
+      <span class="grid-item">{{fiction.summary}}</span>
+      <span class="grid-item">Supplier id:</span>
+      <span class="grid-item">{{fiction.supplierId}}</span>
+      <span class="grid-item">Price:</span>
+      <span class="grid-item bold">{{fiction.price}} €</span>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions class="buttons">
+
+    <div style="float: left;">
+    <span *ngIf="!isFavourite(); else elseBlock">
+      <button mat-icon-button matTooltip="Add to favourites">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+    </span>
+      <ng-template #elseBlock>
+        <button mat-icon-button matTooltip="Delete from favourites">
+          <mat-icon color="warn">favorite</mat-icon>
+        </button>
+      </ng-template>
+
+      <button mat-icon-button color="primary" matTooltip="Add to shopping cart">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </div>
+
+    <form>
+      <mat-form-field>
+        <input matInput [(ngModel)]="amount" type="number" min="0" size="2" name="amount">
+      </mat-form-field>
+    </form>
+
+  </mat-card-actions>
+</mat-card>

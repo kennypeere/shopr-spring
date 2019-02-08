@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <button mat-menu-item class="navButton" routerLink="/lp-datatable">LPs</button>
+  <button mat-menu-item class="navButton" routerLink="/game-datatable">Games</button>
+  <button mat-menu-item [matMenuTriggerFor]="Book" class="navButton">Books</button>
+  <span class="navButton">|</span>
+  <span class="example-fill-remaining-space"></span>
+  <button mat-menu-item [matMenuTriggerFor]="AddArticles" class="navButton">Add articles</button>
+</mat-toolbar>
+
+<mat-menu #Book="matMenu">
+  <button mat-menu-item routerLink="/fiction-datatable">Fiction</button>
+  <button mat-menu-item routerLink="/non-fiction-datatable">Non-Fiction</button>
+</mat-menu>
+
+<mat-menu #AddArticles="matMenu">
+  <button mat-menu-item routerLink="/add/lp">LPs</button>
+  <button mat-menu-item routerLink="/add/game">Games</button>
+  <button mat-menu-item [matMenuTriggerFor]="AddBook">Books</button>
+</mat-menu>
+
+<mat-menu #AddBook="matMenu">
+  <button mat-menu-item routerLink="/add/fiction">Fiction</button>
+  <button mat-menu-item routerLink="/add/non-fiction">Non-Fiction</button>
+</mat-menu>

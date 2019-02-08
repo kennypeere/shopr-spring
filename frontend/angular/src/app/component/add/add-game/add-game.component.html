@@ -1,0 +1,59 @@
+<mat-card class="addCard">
+  <mat-card-header>
+    <mat-card-title>Add Game</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="addGameForm" (ngSubmit)="addGame()">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Publisher" formControlName="publisher" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-select [required]="true" placeholder="Select genre" formControlName="genre">
+            <mat-option value="MMORPG">MMORPG</mat-option>
+            <mat-option value="RPG">RPG</mat-option>
+            <mat-option value="FPS">FPS</mat-option>
+            <mat-option value="RTS">RTS</mat-option>
+            <mat-option value="RACE">RACE</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Minimum age" type="number" formControlName="minimumAge" required="true" min="0" max="18">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Supplier id" formControlName="supplierId" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Price" formControlName="price" required="true">
+          <span matSuffix>€</span>
+        </mat-form-field>
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Create article</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card-content>
+
+
+</mat-card>

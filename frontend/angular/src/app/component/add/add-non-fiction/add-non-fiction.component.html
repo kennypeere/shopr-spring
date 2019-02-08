@@ -1,0 +1,61 @@
+<mat-card class="addCard">
+  <mat-card-header>
+    <mat-card-title>Add NonFiction</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #f="ngForm" [formGroup]="addNonFictionForm" (ngSubmit)="addNonFiction(f)">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Author" formControlName="author" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-select [required]="true" placeholder="Select subject" formControlName="subject">
+            <mat-option value="HISTORY">History</mat-option>
+            <mat-option value="COOKBOOK">Cookbook</mat-option>
+            <mat-option value="SCIENCE">Science</mat-option>
+            <mat-option value="SPORTS">Sports</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="ISBN" [textMask]="{mask: isbnMask}" formControlName="isbn" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Number of pages" min="0" formControlName="numberOfPages" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Supplier id" formControlName="supplierId" required="true">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <price-input placeholder="Price" formControlName="price" ></price-input>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Create article</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card-content>
+
+
+</mat-card>

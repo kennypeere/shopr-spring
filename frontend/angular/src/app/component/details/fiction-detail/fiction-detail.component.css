@@ -1,0 +1,19 @@
+.detailCard{
+  width: 40%;
+  margin: 1.5% auto;
+}
+.bold{
+  font-weight: bold;
+}
+.grid-container {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-template-columns: auto auto;
+  margin: 0 25px 0 25px;
+}
+.grid-item {
+  padding: 10px;
+}
+.buttons{
+  padding-left: 35px;
+}

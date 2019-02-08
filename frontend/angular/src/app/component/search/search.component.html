@@ -1,0 +1,128 @@
+<form>
+  <div class="grid-container">
+    <!-------------------------------------------- kolom 1 -------------------------------------------->
+    <span class="grid-item">
+      <mat-radio-group name="searchRadio" [(ngModel)]="searchRadio">
+        <mat-radio-button class="radioMargin" value="article"></mat-radio-button><br>
+        <mat-radio-button class="radioMargin" value="id"></mat-radio-button>
+      </mat-radio-group>
+    </span>
+    <span class="grid-item">
+      <mat-form-field>
+        <mat-select placeholder="Select article type"
+                    [(ngModel)]="selectedType"
+                    [disabled]="selectedRadioSearchId()"
+                    name="type">
+          <mat-option value="any">Any</mat-option>
+          <mat-option value="lp">LP</mat-option>
+          <mat-option value="game">Game</mat-option>
+          <mat-option value="fiction">Fiction</mat-option>
+          <mat-option value="nonFiction">Non-Fiction</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input matInput type="number"
+               [disabled]="!selectedRadioSearchId()"
+               placeholder="Article id">
+      </mat-form-field>
+    </span>
+
+    <!-------------------------------------------- kolom 2 -------------------------------------------->
+    <span class="grid-item">
+      <mat-form-field>
+        <input matInput type="text"
+               [disabled]="selectedRadioSearchId()"
+               placeholder="Title">
+      </mat-form-field>
+      <br/>
+      <mat-label>Min {{minPrice}}€</mat-label>
+      <mat-slider
+        name="minSlider"
+        [min]="lowestPrice"
+        [max]="maxPrice"
+        [step]="1"
+        [disabled]="selectedRadioSearchId()"
+        [thumbLabel]="true"
+        [vertical]="vertical"
+        [(ngModel)]="minPrice">
+     </mat-slider>
+     <br/>
+      <mat-label>Max {{maxPrice}}€</mat-label>
+      <mat-slider
+        name="MaxSlider"
+        [min]="minPrice"
+        [max]="highestPrice"
+        [step]="1"
+        [disabled]="selectedRadioSearchId()"
+        [thumbLabel]="true"
+        [vertical]="vertical"
+        matSuffix=" €"
+        [(ngModel)]="maxPrice">
+    </mat-slider>
+    </span>
+
+    <!-------------------------------------------- kolom 3 -------------------------------------------->
+    <span class="grid-item">
+      <div *ngIf="isLp()">
+        <mat-form-field>
+          <input matInput
+                 type="text"
+                 [disabled]="selectedRadioSearchId()"
+                 placeholder="Artist">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput
+                 type="text"
+                 [disabled]="selectedRadioSearchId()"
+                 placeholder="genre">
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="isGame()">
+        <mat-form-field>
+          <input matInput
+                 type="text"
+                 [disabled]="selectedRadioSearchId()"
+                 placeholder="Publisher">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 [disabled]="selectedRadioSearchId()"
+                 placeholder="Minimum age">
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="isBook()">
+        <mat-form-field>
+          <input matInput
+                 [disabled]="selectedRadioSearchId()"
+                 type="text"
+                 placeholder="genre">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput
+                 [disabled]="selectedRadioSearchId()"
+                 type="text"
+                 placeholder="Author">
+        </mat-form-field>
+        <div>
+        <mat-form-field>
+          <input matInput
+                 placeholder="ISBN"
+                 [textMask]="{mask: isbnMask}"
+                 formControlName="isbn"
+                 required="true">
+        </mat-form-field>
+      </div>
+      </div>
+    </span>
+    <button mat-stroked-button color="primary" style="height:50px;">Search</button>
+  </div>
+
+
+</form>
+

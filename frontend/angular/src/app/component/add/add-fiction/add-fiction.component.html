@@ -1,0 +1,70 @@
+<mat-card class="addCard">
+  <mat-card-header>
+    <mat-card-title>Add Fiction</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="addFictionForm" (ngSubmit)="addFiction()">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Author" formControlName="author" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-select [required]="true" placeholder="Select genre" formControlName="genre">
+            <mat-option value="THRILLER">Thriller</mat-option>
+            <mat-option value="FANTASY">Fantasy</mat-option>
+            <mat-option value="DETECTIVE">Detective</mat-option>
+            <mat-option value="ROMANCE">Romance</mat-option>
+            <mat-option value="SCIFI">Sci-Fi</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Summary" rows="10" formControlName="summary" #message maxlength="255"></textarea>
+          <mat-hint align="start"><strong>Characters left</strong> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 255</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="ISBN" [textMask]="{mask: isbnMask}" formControlName="isbn" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="number" placeholder="Number of pages" min="0" formControlName="numberOfPages" required="true">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Supplier id" formControlName="supplierId" required="true">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <price-input placeholder="Price" formControlName="price" required="true"></price-input>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Create article</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card-content>
+
+
+</mat-card>
