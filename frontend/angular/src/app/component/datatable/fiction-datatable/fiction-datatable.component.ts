@@ -9,7 +9,7 @@ import {FictionService} from "../../../service/fiction.service";
   styleUrls: ['./fiction-datatable.component.css']
 })
 export class FictionDatatableComponent implements OnInit {
-  columnsToDisplay = ['id', 'title', 'author', 'genre', 'price', 'details', 'delete'];
+  columnsToDisplay = ['id', 'title', 'author', 'genre', 'price', 'details'];
   dataSource: MatTableDataSource<Fiction>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

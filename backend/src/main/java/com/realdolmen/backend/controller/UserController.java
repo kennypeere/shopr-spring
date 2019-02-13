@@ -63,8 +63,13 @@ public class UserController implements Serializable {
         }
     }
 
-    // TODO: postmapping juist zetten
-//    public boolean hasFavourite(){
-//        return userService.hasFavourite(userId, articleId);
-//    }
+    @GetMapping(path = "/{userId}/favourites/{articleId}")
+    public boolean hasFavourite(@PathVariable Integer userId, @PathVariable Integer articleId){
+        return userService.hasFavourite(userId, articleId);
+    }
+    @GetMapping(path = "/{userId}/addFavourite/{articleId}")
+    public void addFavourite(@PathVariable Integer userId, @PathVariable Integer articleId){
+        userService.addFavourite(userId, articleId);
+
+    }
 }

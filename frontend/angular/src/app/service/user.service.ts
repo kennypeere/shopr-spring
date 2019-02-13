@@ -50,9 +50,13 @@ export class UserService {
     sessionStorage.clear();
   }
 
-  // TODO: functie verder implementeren
-  // isFavourite(articleId: number): boolean{
-  //   let userId: number = sessionStorage.getItem("loggedInUserId");
-  // }
+  isFavourite(articleId: number): Observable<boolean>{
+    let userId: number = Number.parseInt(sessionStorage.getItem("loggedInUserId"));
+    return this.httpClient.get<boolean>("/user/" + userId + "/favourites/" + articleId);
+  }
 
+  addFavourite(articleId: number): Observable {
+    let userId: number = Number.parseInt(sessionStorage.getItem("loggedInUserId"));
+    return this.httpClient.get(`/user/${userId}/addFavourite/${articleId}`);
+  }
 }

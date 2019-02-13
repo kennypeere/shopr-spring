@@ -9,7 +9,7 @@ import {GameService} from "../../../service/game.service";
   styleUrls: ['./game-datatable.component.css']
 })
 export class GameDatatableComponent implements OnInit {
-  columnsToDisplay = ['id', 'title', 'publisher', 'genre', 'price', 'details', 'delete'];
+  columnsToDisplay = ['id', 'title', 'publisher', 'genre', 'price', 'details'];
   dataSource : MatTableDataSource<Game>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

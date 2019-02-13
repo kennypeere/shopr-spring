@@ -16,4 +16,8 @@ export class ArticleService {
   fetchHighestPrice() {
     return this.httpClient.get<number>("/article/highest");
   }
+
+  delete(id: number) {
+    this.httpClient.delete("/article/delete/" + id).subscribe();
+  }
 }

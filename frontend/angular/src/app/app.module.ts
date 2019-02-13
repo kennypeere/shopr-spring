@@ -8,10 +8,11 @@ import {UserService} from "./service/user.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+  MAT_DIALOG_DEFAULT_OPTIONS,
   MatBadgeModule,
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatDialog, MatDialogModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -52,6 +53,7 @@ import {TextMaskModule} from "angular2-text-mask";
 import { IsbnInputComponent } from './component/input/isbn-input/isbn-input.component';
 import { FormFieldCustomControlComponent } from './component/input/form-field-custom-control/form-field-custom-control.component';
 import { PriceInputComponent } from './component/input/price-input/price-input.component';
+import { DeleteDialogComponent } from './component/input/delete-dialog/delete-dialog.component';
 
 
 @NgModule({
@@ -78,6 +80,7 @@ import { PriceInputComponent } from './component/input/price-input/price-input.c
     IsbnInputComponent,
     FormFieldCustomControlComponent,
     PriceInputComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -106,9 +109,11 @@ import { PriceInputComponent } from './component/input/price-input/price-input.c
     MatSliderModule,
     MatRadioModule,
     MatSnackBarModule,
-    TextMaskModule
+    TextMaskModule,
+    MatDialogModule
   ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
+  providers: [UserService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteDialogComponent]
 })
 export class AppModule { }

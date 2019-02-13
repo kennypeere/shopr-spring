@@ -11,15 +11,25 @@ export class AddGameComponent implements OnInit {
   addGameForm: FormGroup;
   localPrice: string;
 
-
   constructor(private formBuilder: FormBuilder, private gameService: GameService) { }
 
   ngOnInit() {
-    this.addGameForm = this.formBuilder.group({publisher: [''], title: [''], minimumAge:[''], genre: [''], supplierId: [''], price: ['']});
+    this.addGameForm = this.formBuilder.group({
+      publisher: [''],
+      title: [''],
+      minimumAge:[''],
+      genre: [''],
+      supplierId: [''],
+      price: ['']});
   }
 
-  addGame(){
+  addGame() {
+    this.addGameForm.patchValue({price: this.localPrice});
     this.gameService.addGame(this.addGameForm.value);
+  }
+
+  updatePrice(event) {
+    this.localPrice = event;
   }
 
 }

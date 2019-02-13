@@ -9,6 +9,7 @@ import {LpService} from "../../../service/lp.service";
 })
 export class AddLpComponent implements OnInit {
   addLpForm: FormGroup;
+  localPrice: string;
 
   constructor(private formBuilder: FormBuilder, private lpService: LpService) { }
 
@@ -21,8 +22,13 @@ export class AddLpComponent implements OnInit {
       price: ['']});
   }
 
-  addLp(){
+  addLp() {
+    this.addLpForm.patchValue({price: this.localPrice});
     this.lpService.addLp(this.addLpForm.value);
+  }
+
+  updatePrice(event) {
+    this.localPrice = event;
   }
 
 }

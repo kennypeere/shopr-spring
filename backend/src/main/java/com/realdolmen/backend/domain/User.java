@@ -49,7 +49,6 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
-
     public List<Article> getFavourites() {
         return favourites;
     }

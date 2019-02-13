@@ -8,7 +8,6 @@ import {FictionService} from "../../../service/fiction.service";
   styleUrls: ['./add-fiction.component.css']
 })
 export class AddFictionComponent implements OnInit {
-
   public isbnMask = [/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/];
   addFictionForm: FormGroup;
   localPrice: string;

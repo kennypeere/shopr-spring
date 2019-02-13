@@ -11,7 +11,7 @@ import {Fiction} from "../../../entity/Fiction";
   styleUrls: ['./non-fiction-datatable.component.css']
 })
 export class NonFictionDatatableComponent implements OnInit {
-  columnsToDisplay = ['id', 'author', 'title', 'subject', 'price', 'details', 'delete'];
+  columnsToDisplay = ['id', 'author', 'title', 'subject', 'price', 'details'];
   dataSource : MatTableDataSource<NonFiction>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

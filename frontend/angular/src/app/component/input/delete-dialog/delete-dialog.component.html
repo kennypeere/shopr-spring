@@ -1,0 +1,10 @@
+<div class="mat-body-1">
+  <mat-icon color="warn">
+    warning
+  </mat-icon>&nbsp;
+  Are you sure you want to delete <span class="title">{{data.title}}</span>?
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onYesClick()" class="yes">Yes</button>
+  <button mat-button (click)="onNoClick()" class="no">No</button>
+</div>

@@ -17,3 +17,55 @@
 .buttons{
   padding-left: 35px;
 }
+.hoverRed:hover{
+  color:red;
+  animation: shake 0.5s
+}
+.hoverOrange:hover{
+  color:orange;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(0deg); }
+  40% { transform: rotate(20deg); }
+  50% { transform: rotate(-20deg); }
+  60% { transform: rotate(0deg); }
+  70% { transform: rotate(-20deg); }
+  80% { transform: rotate(20deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+.likeButton:hover {
+  color: red;
+  animation: .8s infinite beatHeart;
+}
+
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.unLikeButton{
+  color: red;
+  transition: 2.5s;
+}
+.unLikeButton:hover{
+  opacity: 0.5;
+  color: #666666;
+}

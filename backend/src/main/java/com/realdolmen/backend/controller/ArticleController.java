@@ -47,7 +47,8 @@ public class ArticleController implements Serializable {
         articleService.delete(article);
     }
 
-    public void deleteById(Integer id){
+    @DeleteMapping(path = "/delete/{id}")
+    public void deleteById(@PathVariable Integer id){
         articleService.deleteById(id);
     }
 

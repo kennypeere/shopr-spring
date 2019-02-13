@@ -36,7 +36,7 @@
                placeholder="Title">
       </mat-form-field>
       <br/>
-      <mat-label>Min {{minPrice}}€</mat-label>
+      <mat-label class="mat-body-1">Min {{minPrice}}€</mat-label>
       <mat-slider
         name="minSlider"
         [min]="lowestPrice"
@@ -48,7 +48,7 @@
         [(ngModel)]="minPrice">
      </mat-slider>
      <br/>
-      <mat-label>Max {{maxPrice}}€</mat-label>
+      <mat-label class="mat-body-1">Max {{maxPrice}}€</mat-label>
       <mat-slider
         name="MaxSlider"
         [min]="minPrice"

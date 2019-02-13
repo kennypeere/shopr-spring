@@ -9,7 +9,7 @@ import {MatPaginator, MatSort, MatTableDataSource, Sort} from '@angular/material
   styleUrls: ['./lp-datatable.component.css']
 })
 export class LpDatatableComponent implements OnInit {
-  columnsToDisplay = ['id', 'title', 'artist', 'genre', 'price', 'details', 'delete'];
+  columnsToDisplay = ['id', 'title', 'artist', 'genre', 'price', 'details'];
   dataSource : MatTableDataSource<Lp>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

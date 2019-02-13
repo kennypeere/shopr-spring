@@ -1,6 +1,14 @@
 <mat-card class="detailCard">
   <mat-card-header>
-    <mat-card-title class="bold">{{fiction.title}}</mat-card-title>
+    <mat-card-title class="bold">
+      {{fiction.title}}
+      <button mat-icon-button class="hoverRed" (click)="openDialog()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button class="hoverOrange">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-title>
     <mat-card-subtitle>Author: {{fiction.author}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -24,13 +32,13 @@
 
     <div style="float: left;">
     <span *ngIf="!isFavourite(); else elseBlock">
-      <button mat-icon-button matTooltip="Add to favourites">
+      <button mat-icon-button class="likeButton" matTooltip="Add to favourites">
         <mat-icon>favorite_border</mat-icon>
       </button>
     </span>
       <ng-template #elseBlock>
         <button mat-icon-button matTooltip="Delete from favourites">
-          <mat-icon color="warn">favorite</mat-icon>
+          <mat-icon class="unLikeButton">favorite</mat-icon>
         </button>
       </ng-template>
 

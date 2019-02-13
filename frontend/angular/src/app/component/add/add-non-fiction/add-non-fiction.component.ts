@@ -8,7 +8,6 @@ import {NonFictionService} from "../../../service/non-fiction.service";
   styleUrls: ['./add-non-fiction.component.css']
 })
 export class AddNonFictionComponent implements OnInit {
-
   public isbnMask = [/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/];
   addNonFictionForm: FormGroup;
   localPrice: string;
