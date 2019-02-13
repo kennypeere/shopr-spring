@@ -56,7 +56,7 @@
       </div>
 
       <mat-form-field>
-        <price-input placeholder="Price" formControlName="price" required="true"></price-input>
+        <price-input (priceValue)="updatePrice($event)" placeholder="Price" formControlName="price" required="true"></price-input>
       </mat-form-field>
 
       <mat-card-actions>

@@ -1,0 +1,19 @@
+<div [formGroup]="parts" class="price-input-container">
+  <span class="price-input-whitespace"></span>
+  <input class="price-input-element-mantissa"
+         id="inputFieldMantissa"
+         formControlName="mantissa"
+         maxlength="4"
+         (focusout)="focusOutMantissa()"
+         (keypress)="fillupMantissa($event, inputFieldDecimals)"
+         [(ngModel)]="inputMantissa">
+  <span class="price-input-spacer">,</span>
+  <input #inputFieldDecimals
+         class="price-input-element-decimals"
+         formControlName="decimals"
+         maxlength="2"
+         (focusout)="focusOutDecimals()"
+         (keypress)="fillupDecimals($event)"
+         [(ngModel)]="inputDecimals">
+  <span class="price-input-spacer">€</span>
+</div>

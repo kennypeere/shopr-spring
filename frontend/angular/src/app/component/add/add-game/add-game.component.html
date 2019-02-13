@@ -41,12 +41,9 @@
         </mat-form-field>
       </div>
 
-      <div>
-        <mat-form-field>
-          <input matInput type="number" placeholder="Price" formControlName="price" required="true">
-          <span matSuffix>€</span>
-        </mat-form-field>
-      </div>
+      <mat-form-field>
+        <price-input (priceValue)="updatePrice($event)" placeholder="Price" formControlName="price" required="true"></price-input>
+      </mat-form-field>
 
       <mat-card-actions>
         <button mat-raised-button color="primary" type="submit">Create article</button>

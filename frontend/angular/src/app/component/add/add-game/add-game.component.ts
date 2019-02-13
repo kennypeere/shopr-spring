@@ -9,6 +9,8 @@ import {GameService} from "../../../service/game.service";
 })
 export class AddGameComponent implements OnInit {
   addGameForm: FormGroup;
+  localPrice: string;
+
 
   constructor(private formBuilder: FormBuilder, private gameService: GameService) { }
 

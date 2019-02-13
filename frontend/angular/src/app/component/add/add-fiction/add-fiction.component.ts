@@ -11,6 +11,7 @@ export class AddFictionComponent implements OnInit {
 
   public isbnMask = [/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/];
   addFictionForm: FormGroup;
+  localPrice: string;
 
   constructor(private formBuilder: FormBuilder, private fictionService: FictionService) {
   }
@@ -29,7 +30,12 @@ export class AddFictionComponent implements OnInit {
   }
 
   addFiction() {
+    this.addFictionForm.patchValue({price: this.localPrice});
     this.fictionService.addFiction(this.addFictionForm.value);
+  }
+
+  updatePrice(event) {
+    this.localPrice = event;
   }
 
 }

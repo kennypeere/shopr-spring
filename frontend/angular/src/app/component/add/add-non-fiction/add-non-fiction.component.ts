@@ -11,8 +11,7 @@ export class AddNonFictionComponent implements OnInit {
 
   public isbnMask = [/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/];
   addNonFictionForm: FormGroup;
-
-  price: number;
+  localPrice: string;
 
   constructor(private formBuilder: FormBuilder, private nonFictionService: NonFictionService) { }
 
@@ -28,10 +27,13 @@ export class AddNonFictionComponent implements OnInit {
     });
   }
 
-  addNonFiction(f: NgForm) {
-    console.log(f);
-    // this.addNonFictionForm.patchValue({price: this.price});
+  addNonFiction() {
+    this.addNonFictionForm.patchValue({price: this.localPrice});
     this.nonFictionService.addNonFiction(this.addNonFictionForm.value);
+  }
+
+  updatePrice(event) {
+    this.localPrice = event;
   }
 
 }
