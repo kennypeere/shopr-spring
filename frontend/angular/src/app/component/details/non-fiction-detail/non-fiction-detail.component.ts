@@ -4,6 +4,13 @@ import {ActivatedRoute} from "@angular/router";
 import {NonFictionService} from "../../../service/non-fiction.service";
 import {MatDialog} from "@angular/material";
 import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.component";
+import {BehaviorSubject} from "rxjs";
+import {UserService} from "../../../service/user.service";
+
+export interface DialogData {
+  title: string;
+  id: number;
+}
 
 @Component({
   selector: 'app-non-fiction-detail',
@@ -13,12 +20,18 @@ import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.com
 export class NonFictionDetailComponent implements OnInit {
   nonFiction: NonFiction = new NonFiction();
   amount: number = 0;
+  fav: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private nonFictionService: NonFictionService, private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private userService: UserService, private nonFictionService: NonFictionService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit() {
     const id: number = this.route.snapshot.params['id'];
     this.nonFictionService.findNonFictionById(id).subscribe(nonFiction => this.nonFiction = nonFiction);
+    this.isFavourite(id);
+  }
+
+  private isFavourite(id: number) {
+    this.userService.isFavourite(id).subscribe(result => this.fav.next(result));
   }
 
   openDialog(): void {
@@ -28,9 +41,7 @@ export class NonFictionDetailComponent implements OnInit {
     });
   }
 
-  //TODO: functie verder implementeren
-  isFavourite(): boolean{
-    return true;
-    // return this.userService.isFavourite(nonFiction.id);
+  addFavourite() {
+    this.userService.addFavourite(this.nonFiction.id).subscribe(()=> this.isFavourite(this.nonFiction.id));
   }
 }

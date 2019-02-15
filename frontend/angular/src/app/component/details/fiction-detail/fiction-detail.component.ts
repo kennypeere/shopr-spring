@@ -4,6 +4,13 @@ import {ActivatedRoute} from "@angular/router";
 import {FictionService} from "../../../service/fiction.service";
 import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.component";
 import {MatDialog} from "@angular/material";
+import {BehaviorSubject} from "rxjs";
+import {UserService} from "../../../service/user.service";
+
+export interface DialogData {
+  title: string;
+  id: number;
+}
 
 @Component({
   selector: 'app-fiction-detail',
@@ -12,12 +19,18 @@ import {MatDialog} from "@angular/material";
 })
 export class FictionDetailComponent implements OnInit {
   fiction: Fiction = new Fiction();
+  fav: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private fictionService: FictionService, private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private userService: UserService, private fictionService: FictionService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit() {
     const id: number = this.route.snapshot.params['id'];
     this.fictionService.findFictionById(id).subscribe(fiction => this.fiction = fiction);
+    this.isFavourite(id);
+  }
+
+  private isFavourite(id: number) {
+    this.userService.isFavourite(id).subscribe(result => this.fav.next(result));
   }
 
   openDialog(): void {
@@ -27,8 +40,8 @@ export class FictionDetailComponent implements OnInit {
     });
   }
 
-  isFavourite(): boolean{
-    return false;
+  addFavourite() {
+    this.userService.addFavourite(this.fiction.id).subscribe(()=> this.isFavourite(this.fiction.id));
   }
 
 }

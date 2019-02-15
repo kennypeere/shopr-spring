@@ -55,8 +55,14 @@ export class UserService {
     return this.httpClient.get<boolean>("/user/" + userId + "/favourites/" + articleId);
   }
 
-  addFavourite(articleId: number): Observable {
+  addFavourite(articleId: number): Observable<Object> {
     let userId: number = Number.parseInt(sessionStorage.getItem("loggedInUserId"));
     return this.httpClient.get(`/user/${userId}/addFavourite/${articleId}`);
+  }
+
+  removeFavourite(articleId: number): Observable<Object>{
+    let userId: number = Number.parseInt(sessionStorage.getItem("loggedInUserId"));
+    return this.httpClient.get(`/user/${userId}/removeFavourite/${articleId}`);
+
   }
 }

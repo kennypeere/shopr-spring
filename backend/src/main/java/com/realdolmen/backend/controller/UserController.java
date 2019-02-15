@@ -70,6 +70,11 @@ public class UserController implements Serializable {
     @GetMapping(path = "/{userId}/addFavourite/{articleId}")
     public void addFavourite(@PathVariable Integer userId, @PathVariable Integer articleId){
         userService.addFavourite(userId, articleId);
-
     }
+
+    @GetMapping(path = "/{userId}/removeFavourite/{articleId}")
+    public void removeFavourite(@PathVariable Integer userId, @PathVariable Integer articleId){
+        userService.removeFavourite(userId, articleId);
+    }
+
 }

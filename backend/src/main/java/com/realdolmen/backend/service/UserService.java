@@ -51,4 +51,16 @@ public class UserService {
         user.setFavourites(favourites);
         save(user);
     }
+
+    public void removeFavourite(Integer userId, Integer articleId) {
+        User user = userRepository.findById(userId).get();
+        Article article = articleRepository.findById(articleId).get();
+        List<Article> favourites = user.getFavourites();
+        try {
+            favourites.remove(article);
+            save(user);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material";
 import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.component";
 import {UserService} from "../../../service/user.service";
-import {BehaviorSubject, Subject} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 
 export interface DialogData {
   title: string;
@@ -21,7 +21,6 @@ export class LpDetailComponent implements OnInit {
   lp: Lp = new Lp();
   amount: number = 0;
   fav: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
 
   constructor(private userService: UserService, private lpService: LpService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
@@ -44,5 +43,9 @@ export class LpDetailComponent implements OnInit {
 
   addFavourite() {
     this.userService.addFavourite(this.lp.id).subscribe(()=> this.isFavourite(this.lp.id));
+  }
+
+  removeFavourite() {
+    this.userService.removeFavourite(this.lp.id).subscribe(()=> this.isFavourite(this.lp.id));
   }
 }
