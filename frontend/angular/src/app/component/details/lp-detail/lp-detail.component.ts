@@ -48,4 +48,8 @@ export class LpDetailComponent implements OnInit {
   removeFavourite() {
     this.userService.removeFavourite(this.lp.id).subscribe(()=> this.isFavourite(this.lp.id));
   }
+
+  getLoggedInUserFirstName(): string{
+    return this.userService.getLoggedInUserFirstName();
+  }
 }

@@ -3,7 +3,6 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../entity/User";
 import {Observable} from "rxjs";
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -63,6 +62,5 @@ export class UserService {
   removeFavourite(articleId: number): Observable<Object>{
     let userId: number = Number.parseInt(sessionStorage.getItem("loggedInUserId"));
     return this.httpClient.get(`/user/${userId}/removeFavourite/${articleId}`);
-
   }
 }
