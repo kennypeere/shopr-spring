@@ -8,17 +8,22 @@ import {ArticleService} from "../../service/article.service";
 })
 export class SearchComponent implements OnInit {
   selectedType: string;
-  minSliderMinValue= 0;
+
   lowestPrice: number;
-  highestPrice: number
-  heighestPrice= 0;
-  maxSliderMaxValue= 70;
+  highestPrice: number;
+
   minPrice: number;
   maxPrice: number;
+
   searchRadio: string = "";
   public isbnMask = [/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/];
 
-  constructor(private articleService: ArticleService) { }
+  lpGenres: string[] = ['Classical', 'Pop', 'Rock', 'Dance', 'R&B', 'Hip-hop'];
+  gameGenres: string[] = ['MMORPG', 'RPG', 'FPS', 'RTS', 'RACE'];
+  fictionGenres: string[] = ['Thriller', 'Fantasy', 'Detective', 'Romance', 'Sci-Fi'];
+  nonFictionSubjects: string[] = ['History', 'Cookbook', 'Science', 'Sports'];
+
+  constructor(private articleService: ArticleService) {  }
 
   ngOnInit() {
     this.fetchMinPrice();
@@ -35,8 +40,12 @@ export class SearchComponent implements OnInit {
     return this.selectedType == 'game';
   }
 
-  isBook(): boolean{
-    return (this.selectedType == 'fiction' || this.selectedType == 'nonFiction');
+  isFiction(): boolean{
+    return (this.selectedType == 'fiction');
+  }
+
+  isNonFiction(): boolean{
+    return (this.selectedType == 'nonFiction');
   }
 
   selectedRadioSearchId(): boolean{

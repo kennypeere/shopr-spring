@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th class="smallColumn" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+    <td mat-cell *matCellDef="let article"> {{article.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th class="largeColumn" mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+    <td mat-cell *matCellDef="let article"> {{article.types}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th class="largeColumn" mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+    <td mat-cell *matCellDef="let article"> {{article.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th class="smallColumn" mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+    <td mat-cell *matCellDef="let article"> {{article.price}} €</td>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <th class="smallColumn" mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let article">
+      <button mat-icon-button routerLink="/article/{{article.id}}">
+        <mat-icon color="accent">info</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let articles; columns: columnsToDisplay"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>

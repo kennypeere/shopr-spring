@@ -63,6 +63,7 @@
     </span>
 
     <!-------------------------------------------- kolom 3 -------------------------------------------->
+    <!--   LP   -->
     <span class="grid-item">
       <div *ngIf="isLp()">
         <mat-form-field>
@@ -73,13 +74,15 @@
         </mat-form-field>
         <br/>
         <mat-form-field>
-          <input matInput
-                 type="text"
-                 [disabled]="selectedRadioSearchId()"
-                 placeholder="genre">
+          <mat-select placeholder="Select genre">
+            <mat-option *ngFor="let genre of lpGenres" [value]="genre">
+              {{genre}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
+      <!--   GAME   -->
       <div *ngIf="isGame()">
         <mat-form-field>
           <input matInput
@@ -94,30 +97,64 @@
                  [disabled]="selectedRadioSearchId()"
                  placeholder="Minimum age">
         </mat-form-field>
+          <br/>
+        <mat-form-field>
+          <mat-select placeholder="Select genre">
+            <mat-option *ngFor="let genre of gameGenres" [value]="genre">
+              {{genre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
-      <div *ngIf="isBook()">
+      <!--   FICTION   -->
+      <div *ngIf="isFiction()">
         <mat-form-field>
-          <input matInput
-                 [disabled]="selectedRadioSearchId()"
-                 type="text"
-                 placeholder="genre">
+          <mat-select placeholder="Select genre">
+            <mat-option *ngFor="let genre of fictionGenres" [value]="genre">
+              {{genre}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
+        <br/>
         <mat-form-field>
           <input matInput
                  [disabled]="selectedRadioSearchId()"
                  type="text"
                  placeholder="Author">
         </mat-form-field>
-        <div>
+        <br/>
+          <mat-form-field>
+            <input matInput
+                   placeholder="ISBN"
+                   [textMask]="{mask: isbnMask}"
+                   formControlName="isbn">
+          </mat-form-field>
+      </div>
+
+      <!--   NON FICTION   -->
+      <div *ngIf="isNonFiction()">
+        <mat-form-field>
+          <mat-select placeholder="Select subject">
+            <mat-option *ngFor="let subject of nonFictionSubjects" [value]="subject">
+              {{subject}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br/>
         <mat-form-field>
           <input matInput
-                 placeholder="ISBN"
-                 [textMask]="{mask: isbnMask}"
-                 formControlName="isbn"
-                 required="true">
+                 [disabled]="selectedRadioSearchId()"
+                 type="text"
+                 placeholder="Author">
         </mat-form-field>
-      </div>
+        <br/>
+          <mat-form-field>
+            <input matInput
+                   placeholder="ISBN"
+                   [textMask]="{mask: isbnMask}"
+                   formControlName="isbn">
+          </mat-form-field>
       </div>
     </span>
     <button mat-stroked-button color="primary" style="height:50px;">Search</button>
