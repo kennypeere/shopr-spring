@@ -1,0 +1,38 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      Card details
+    </mat-card-title>
+  </mat-card-header>
+  <table>
+    <tr>
+      <td><img src="../../../assets/images/cards/visa.png"></td>
+      <td><img src="../../../assets/images/cards/master.png"></td>
+      <td><img src="../../../assets/images/cards/amex.png"></td>
+      <td><img src="../../../assets/images/cards/maestro.png"></td>
+      <td><img src="../../../assets/images/cards/paypal.png"></td>
+      <td><img src="../../../assets/images/cards/bit.png"></td>
+    </tr>
+    <tr>
+      <mat-form-field>
+        <input matInput placeholder="Card number" [textMask]="{mask: ccMask}"/>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-select placeholder="Year">
+            <mat-option *ngFor="let year of years" value="year">{{year}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <mat-select placeholder="Month">
+            <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</mat-card>

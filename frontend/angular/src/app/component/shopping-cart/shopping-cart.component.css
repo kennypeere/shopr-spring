@@ -1,22 +1,17 @@
-.shoppingCartCard{
-  width: 60%;
-  margin: 1.5% auto;
-}
-.cardTitle{
-  font-weight: bold;
-  font-size: 1.6em;
-}
 .grid-container-price {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 10% 20% 10%;
   margin: 10px 0;
 }
 .totalPrice{
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 10% 20% 10%;
   font-weight: bold;
   font-size: 1.2em;
   margin: 10px 0 10px 0;
+}
+.priceItem{
+  vertical-align: middle;
 }
 .titleLine{
   font-weight: bold;
@@ -24,6 +19,8 @@
 .divider{
   width: 75%;
 }
-.priceLine{
 
+.grid-container-price > span{
+  align-self: center;
+  justify-self: center;
 }

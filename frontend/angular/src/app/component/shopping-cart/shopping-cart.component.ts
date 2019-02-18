@@ -18,11 +18,18 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   calculateTotalPrice(){
+    this.totalPrice = 0;
     for (let ol of this.cart){
       this.totalPrice += ol.price;
-      this.totalPrice.toFixed(2);
+      this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
     }
 
+  }
+
+  deleteOrderLine(index: number){
+    this.cart.splice(index, 1);
+    this.calculateTotalPrice();
+    this.storageService.addToStorage(this.cart);
   }
 
 }

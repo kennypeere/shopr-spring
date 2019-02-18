@@ -26,7 +26,7 @@ import {
   MatSelectModule,
   MatSliderModule,
   MatSnackBarModule,
-  MatSortModule,
+  MatSortModule, MatStepperModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
@@ -58,6 +58,8 @@ import {PriceInputComponent} from './component/input/price-input/price-input.com
 import {DeleteDialogComponent} from './component/input/delete-dialog/delete-dialog.component';
 import {ShoppingCartComponent} from './component/shopping-cart/shopping-cart.component';
 import {StorageService} from "./service/storage.service";
+import { FlowComponent } from './component/flow/flow.component';
+import { PaymentDetailsComponent } from './component/payment-details/payment-details.component';
 
 
 @NgModule({
@@ -86,6 +88,8 @@ import {StorageService} from "./service/storage.service";
     PriceInputComponent,
     DeleteDialogComponent,
     ShoppingCartComponent,
+    FlowComponent,
+    PaymentDetailsComponent,
   ],
   imports: [
     FormsModule,
@@ -116,7 +120,8 @@ import {StorageService} from "./service/storage.service";
     MatSnackBarModule,
     TextMaskModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatStepperModule
   ],
   providers: [UserService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}, StorageService],
   bootstrap: [AppComponent],

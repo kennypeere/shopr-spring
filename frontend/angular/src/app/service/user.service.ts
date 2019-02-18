@@ -78,7 +78,7 @@ export class UserService {
     }
     else {
       let cart: OrderLine[] = JSON.parse(localStorage.getItem('cart'));
-      let foundArticleIndex = cart.findIndex((value) => value.article == article);
+      let foundArticleIndex = cart.findIndex((value) => value.article.id == article.id);
 
       if (foundArticleIndex == -1) {
         cart.push(newOrderLine);
