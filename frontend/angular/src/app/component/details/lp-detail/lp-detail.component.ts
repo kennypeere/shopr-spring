@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material";
 import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.component";
 import {UserService} from "../../../service/user.service";
 import {BehaviorSubject} from "rxjs";
+import {Article} from "../../../entity/Article";
 
 export interface DialogData {
   title: string;
@@ -19,7 +20,7 @@ export interface DialogData {
 })
 export class LpDetailComponent implements OnInit {
   lp: Lp = new Lp();
-  amount: number = 0;
+  amount: number = 1;
   fav: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private userService: UserService, private lpService: LpService, private route: ActivatedRoute, public dialog: MatDialog) { }
@@ -51,5 +52,10 @@ export class LpDetailComponent implements OnInit {
 
   getLoggedInUserFirstName(): string{
     return this.userService.getLoggedInUserFirstName();
+  }
+
+
+  addToCart(lp: Lp) {
+    this.userService.addToCart(<Article>this.lp, this.amount);
   }
 }

@@ -1,0 +1,29 @@
+.shoppingCartCard{
+  width: 60%;
+  margin: 1.5% auto;
+}
+.cardTitle{
+  font-weight: bold;
+  font-size: 1.6em;
+}
+.grid-container-price {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  margin: 10px 0;
+}
+.totalPrice{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0 10px 0;
+}
+.titleLine{
+  font-weight: bold;
+}
+.divider{
+  width: 75%;
+}
+.priceLine{
+
+}

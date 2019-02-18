@@ -14,6 +14,7 @@ import {AddLpComponent} from "./component/add/add-lp/add-lp.component";
 import {AddGameComponent} from "./component/add/add-game/add-game.component";
 import {AddFictionComponent} from "./component/add/add-fiction/add-fiction.component";
 import {AddNonFictionComponent} from "./component/add/add-non-fiction/add-non-fiction.component";
+import {ShoppingCartComponent} from "./component/shopping-cart/shopping-cart.component";
 
 const routes: Routes = [
   { path:'', component: GeneralpageComponent },
@@ -22,14 +23,15 @@ const routes: Routes = [
   { path:'game-datatable', component: GameDatatableComponent },
   { path:'fiction-datatable', component: FictionDatatableComponent },
   { path:'non-fiction-datatable', component: NonFictionDatatableComponent },
-  { path:'lp/:id', component: LpDetailComponent},
-  { path:'game/:id', component: GameDetailComponent},
-  { path:'fiction/:id', component: FictionDetailComponent},
-  { path:'non-fiction/:id', component: NonFictionDetailComponent},
-  { path:'add/lp', component: AddLpComponent},
-  { path:'add/game', component: AddGameComponent},
-  { path:'add/fiction', component: AddFictionComponent},
-  { path:'add/non-fiction', component: AddNonFictionComponent},
+  { path:'lp/:id', component: LpDetailComponent },
+  { path:'game/:id', component: GameDetailComponent },
+  { path:'fiction/:id', component: FictionDetailComponent },
+  { path:'non-fiction/:id', component: NonFictionDetailComponent },
+  { path:'add/lp', component: AddLpComponent },
+  { path:'add/game', component: AddGameComponent },
+  { path:'add/fiction', component: AddFictionComponent },
+  { path:'add/non-fiction', component: AddNonFictionComponent },
+  { path: 'cart', component: ShoppingCartComponent }
 ];
 
 @NgModule({

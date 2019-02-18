@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {UserService} from "../../service/user.service";
+import {BehaviorSubject} from "rxjs";
+import {OrderLine} from "../../entity/OrderLine";
+import {StorageService} from "../../service/storage.service";
 
 @Component({
   selector: 'app-header',
@@ -8,17 +11,35 @@ import {UserService} from "../../service/user.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  //TODO: https://stackoverflow.com/questions/35397198/how-can-i-watch-for-changes-to-localstorage-in-angular2/35397253
 
-  ngOnInit() {
+  itemsInCart: number;
+
+  constructor(private userService: UserService, private storageService: StorageService) {
   }
 
-  getLoggedInUserFirstName(): string{
+  setItemsInCart(storage: OrderLine[]) {
+    if (storage) {
+      this.itemsInCart = storage.length;
+
+    }
+  }
+
+  ngOnInit() {
+    this.storageService.storage.subscribe((storage) => {
+      this.setItemsInCart(storage);
+    });
+  }
+
+  getLoggedInUserFirstName(): string {
     return this.userService.getLoggedInUserFirstName();
   }
 
-  resetLoggedInUser(): void{
+  resetLoggedInUser(): void {
     this.userService.resetLoggedInUser();
   }
 
+
 }
+
+

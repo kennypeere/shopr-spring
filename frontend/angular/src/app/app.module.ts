@@ -12,7 +12,9 @@ import {
   MatBadgeModule,
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule, MatDialog, MatDialogModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -50,10 +52,12 @@ import {AddGameComponent} from './component/add/add-game/add-game.component';
 import {AddFictionComponent} from './component/add/add-fiction/add-fiction.component';
 import {AddNonFictionComponent} from './component/add/add-non-fiction/add-non-fiction.component';
 import {TextMaskModule} from "angular2-text-mask";
-import { IsbnInputComponent } from './component/input/isbn-input/isbn-input.component';
-import { FormFieldCustomControlComponent } from './component/input/form-field-custom-control/form-field-custom-control.component';
-import { PriceInputComponent } from './component/input/price-input/price-input.component';
-import { DeleteDialogComponent } from './component/input/delete-dialog/delete-dialog.component';
+import {IsbnInputComponent} from './component/input/isbn-input/isbn-input.component';
+import {FormFieldCustomControlComponent} from './component/input/form-field-custom-control/form-field-custom-control.component';
+import {PriceInputComponent} from './component/input/price-input/price-input.component';
+import {DeleteDialogComponent} from './component/input/delete-dialog/delete-dialog.component';
+import {ShoppingCartComponent} from './component/shopping-cart/shopping-cart.component';
+import {StorageService} from "./service/storage.service";
 
 
 @NgModule({
@@ -81,6 +85,7 @@ import { DeleteDialogComponent } from './component/input/delete-dialog/delete-di
     FormFieldCustomControlComponent,
     PriceInputComponent,
     DeleteDialogComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     FormsModule,
@@ -110,9 +115,10 @@ import { DeleteDialogComponent } from './component/input/delete-dialog/delete-di
     MatRadioModule,
     MatSnackBarModule,
     TextMaskModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule
   ],
-  providers: [UserService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [UserService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}, StorageService],
   bootstrap: [AppComponent],
   entryComponents: [DeleteDialogComponent]
 })
