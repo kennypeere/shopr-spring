@@ -34,5 +34,69 @@
         </mat-form-field>
       </td>
     </tr>
+    <tr>
+      <mat-form-field>
+        <input matInput placeholder="CVC code" [textMask]="{mask: cvc}"/>
+      </mat-form-field>
+    </tr>
   </table>
+</mat-card>
+
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      Shipment details
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="First name">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="Surname">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="Street">
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field>
+            <input matInput type="number" placeholder="Number">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput type="number" placeholder="Postal Code">
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="City">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <mat-form-field>
+            <input matInput placeholder="Country">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+
+  </mat-card-content>
 </mat-card>

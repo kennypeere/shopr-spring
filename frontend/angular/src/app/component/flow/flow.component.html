@@ -13,7 +13,7 @@
           <ng-template matStepLabel>Review your order</ng-template>
           <app-shopping-cart></app-shopping-cart>
           <div>
-            <button mat-raised-button color="accent" matStepperNext>Next</button>
+            <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
           </div>
       </mat-step>
 
@@ -24,8 +24,8 @@
           <ng-template matStepLabel>Payment details</ng-template>
           <app-payment-details [secondFormGroup]="secondFormGroup"></app-payment-details>
           <div>
-            <button mat-raised-button color="accent" matStepperPrevious>Back</button>
-            <button mat-raised-button color="accent" matStepperNext>Next</button>
+            <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
+            <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
           </div>
         </form>
       </mat-step>
@@ -34,7 +34,7 @@
         <ng-template matStepLabel>Confirmation</ng-template>
         You are now done.
         <div>
-          <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+          <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
           <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
         </div>
       </mat-step>

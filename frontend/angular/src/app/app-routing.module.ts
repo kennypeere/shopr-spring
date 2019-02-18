@@ -15,6 +15,7 @@ import {AddGameComponent} from "./component/add/add-game/add-game.component";
 import {AddFictionComponent} from "./component/add/add-fiction/add-fiction.component";
 import {AddNonFictionComponent} from "./component/add/add-non-fiction/add-non-fiction.component";
 import {FlowComponent} from "./component/flow/flow.component";
+import {FavouritesComponent} from "./component/favourites/favourites.component";
 
 const routes: Routes = [
   { path:'', component: GeneralpageComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path:'add/game', component: AddGameComponent },
   { path:'add/fiction', component: AddFictionComponent },
   { path:'add/non-fiction', component: AddNonFictionComponent },
-  { path: 'checkout', component: FlowComponent }
+  { path: 'checkout', component: FlowComponent },
+  { path: 'favourites', component: FavouritesComponent }
 ];
 
 @NgModule({

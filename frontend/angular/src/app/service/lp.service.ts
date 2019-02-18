@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Lp} from "../entity/Lp";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Article} from "../entity/Article";
-import {reject} from "q";
 import {MatSnackBar} from "@angular/material";
 
 @Injectable({

@@ -25,4 +25,8 @@ export class ArticleService {
   findById(id: number): Observable<Article>{
     return this.httpClient.get<Article>("/article/" + id);
   }
+
+  getArticles(): Observable<Article[]> {
+    return this.httpClient.get<Article[]>("/article");
+  }
 }

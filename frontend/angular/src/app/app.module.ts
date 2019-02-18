@@ -60,6 +60,7 @@ import {ShoppingCartComponent} from './component/shopping-cart/shopping-cart.com
 import {StorageService} from "./service/storage.service";
 import { FlowComponent } from './component/flow/flow.component';
 import { PaymentDetailsComponent } from './component/payment-details/payment-details.component';
+import { FavouritesComponent } from './component/favourites/favourites.component';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { PaymentDetailsComponent } from './component/payment-details/payment-det
     ShoppingCartComponent,
     FlowComponent,
     PaymentDetailsComponent,
+    FavouritesComponent,
   ],
   imports: [
     FormsModule,

@@ -10,6 +10,7 @@ export class PaymentDetailsComponent implements OnInit {
   @Input()
   secondFormGroup: FormGroup;
   public ccMask = [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  public cvc = [/\d/, /\d/, /\d/];
   years: number[] = [];
   months: string[] = [];
 
