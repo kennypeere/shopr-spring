@@ -61,6 +61,7 @@ import {StorageService} from "./service/storage.service";
 import { FlowComponent } from './component/flow/flow.component';
 import { PaymentDetailsComponent } from './component/payment-details/payment-details.component';
 import { FavouritesComponent } from './component/favourites/favourites.component';
+import { ConfirmationComponent } from './component/confirmation/confirmation.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { FavouritesComponent } from './component/favourites/favourites.component
     FlowComponent,
     PaymentDetailsComponent,
     FavouritesComponent,
+    ConfirmationComponent,
   ],
   imports: [
     FormsModule,

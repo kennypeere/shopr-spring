@@ -11,8 +11,6 @@ import {StorageService} from "../../service/storage.service";
 })
 export class HeaderComponent implements OnInit {
 
-  //TODO: https://stackoverflow.com/questions/35397198/how-can-i-watch-for-changes-to-localstorage-in-angular2/35397253
-
   itemsInCart: number;
 
   constructor(private userService: UserService, private storageService: StorageService) {
@@ -21,7 +19,6 @@ export class HeaderComponent implements OnInit {
   setItemsInCart(storage: OrderLine[]) {
     if (storage) {
       this.itemsInCart = storage.length;
-
     }
   }
 

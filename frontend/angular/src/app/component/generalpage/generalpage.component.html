@@ -25,7 +25,7 @@
          <mat-card>
           <mat-card-header>
             <mat-card-title>
-                <button mat-icon-button color="accent">
+                <button mat-icon-button color="accent" (click)="navigateToDetailsPage(article)">
                   <mat-icon>info</mat-icon>
                 </button>
                 {{article.title}}

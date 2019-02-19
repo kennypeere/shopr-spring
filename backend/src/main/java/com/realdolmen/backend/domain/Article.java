@@ -27,6 +27,17 @@ public class Article {
     @Column(name = "supplier_id")
     private String supplierId;
 
+    @Column(name = "types", insertable = false, updatable = false)
+    private String types;
+
+    public String getTypes() {
+        return types;
+    }
+
+    public void setTypes(String types) {
+        this.types = types;
+    }
+
     public Integer getId() {
         return id;
     }

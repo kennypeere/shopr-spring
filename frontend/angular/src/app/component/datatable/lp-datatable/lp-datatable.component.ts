@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Lp} from "../../../entity/Lp";
 import {LpService} from "../../../service/lp.service";
-import {MatPaginator, MatSort, MatTableDataSource, Sort} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-lp-datatable',
