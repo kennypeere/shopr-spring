@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ArticleService {
@@ -42,5 +43,9 @@ public class ArticleService {
 
     public Object fetchHighestPrice() throws NotFoundException {
         return articleRepository.findHighestPrice().orElseThrow(() -> new NotFoundException("Highest price not found"));
+    }
+
+    public List<Article> getCheapest8Articles() {
+        return articleRepository.getAllByOrderByPriceAsc().stream().limit(8L).collect(Collectors.toList());
     }
 }

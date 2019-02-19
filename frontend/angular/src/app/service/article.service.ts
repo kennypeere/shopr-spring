@@ -29,4 +29,8 @@ export class ArticleService {
   getArticles(): Observable<Article[]> {
     return this.httpClient.get<Article[]>("/article");
   }
+
+  getCheapest8Articles(): Observable<Article[]> {
+    return this.httpClient.get<Article[]>("/article/topDeals");
+  }
 }

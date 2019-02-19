@@ -70,5 +70,10 @@ public class ArticleController implements Serializable {
         }
     }
 
+    @GetMapping(path = "/topDeals")
+    public List<Article> getCheapest8Articles(){
+        return articleService.getCheapest8Articles();
+    }
+
 
 }

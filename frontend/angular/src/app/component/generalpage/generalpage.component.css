@@ -1,0 +1,23 @@
+.pageCard{
+  width: 75%;
+  margin: 1.5% auto;
+}
+.pageTitle{
+  font-weight: bold;
+  font-size: 1.6em;
+  margin: 0 auto;
+}
+
+.dollar {
+  color: limegreen;
+}
+
+.grid-container {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-template-columns: auto auto auto auto;
+  margin: 0 25px 0 25px;
+}
+.grid-item {
+  padding: 10px;
+}

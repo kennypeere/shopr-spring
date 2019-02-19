@@ -28,18 +28,19 @@
   <mat-card-actions class="buttons">
 
     <div style="float: left;">
-    <span *ngIf="!fav.getValue(); else elseBlock">
-      <button mat-icon-button (click)="addFavourite()" matTooltip="Add to favourites">
-        <mat-icon class="likeButton">favorite_border</mat-icon>
-      </button>
-    </span>
-      <ng-template #elseBlock>
-        <button mat-icon-button matTooltip="Delete from favourites">
-          <mat-icon class="unLikeButton">favorite</mat-icon>
-        </button>
-      </ng-template>
-
-      <button mat-icon-button color="primary" matTooltip="Add to shopping cart">
+      <span *ngIf="getLoggedInUserFirstName() != undefined">
+        <span *ngIf="!fav.getValue(); else elseBlock">
+          <button mat-icon-button (click)="addFavourite()" matTooltip="Add to favourites">
+            <mat-icon class="likeButton">favorite_border</mat-icon>
+          </button>
+        </span>
+        <ng-template #elseBlock>
+          <button mat-icon-button (click)="removeFavourite()" matTooltip="Delete from favourites">
+            <mat-icon class="unLikeButton">favorite</mat-icon>
+          </button>
+        </ng-template>
+      </span>
+      <button mat-icon-button color="primary" matTooltip="Add to shopping cart" (click)="addToCart(nonFiction)">
         <mat-icon>add_shopping_cart</mat-icon>
       </button>
     </div>

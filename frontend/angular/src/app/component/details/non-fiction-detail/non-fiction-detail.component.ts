@@ -6,6 +6,8 @@ import {MatDialog} from "@angular/material";
 import {DeleteDialogComponent} from "../../input/delete-dialog/delete-dialog.component";
 import {BehaviorSubject} from "rxjs";
 import {UserService} from "../../../service/user.service";
+import {Lp} from "../../../entity/Lp";
+import {Article} from "../../../entity/Article";
 
 export interface DialogData {
   title: string;
@@ -19,7 +21,7 @@ export interface DialogData {
 })
 export class NonFictionDetailComponent implements OnInit {
   nonFiction: NonFiction = new NonFiction();
-  amount: number = 0;
+  amount: number = 1;
   fav: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private userService: UserService, private nonFictionService: NonFictionService, private route: ActivatedRoute, public dialog: MatDialog) { }
@@ -43,5 +45,18 @@ export class NonFictionDetailComponent implements OnInit {
 
   addFavourite() {
     this.userService.addFavourite(this.nonFiction.id).subscribe(()=> this.isFavourite(this.nonFiction.id));
+  }
+
+  removeFavourite() {
+    this.userService.removeFavourite(this.nonFiction.id).subscribe(()=> this.isFavourite(this.nonFiction.id));
+  }
+
+  getLoggedInUserFirstName(): string{
+    return this.userService.getLoggedInUserFirstName();
+  }
+
+
+  addToCart(lp: Lp) {
+    this.userService.addToCart(<Article>this.nonFiction, this.amount);
   }
 }

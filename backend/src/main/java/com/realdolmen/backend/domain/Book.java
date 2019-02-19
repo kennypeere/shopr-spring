@@ -19,7 +19,7 @@ public abstract class Book extends Article {
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{4}-\\d{3}-\\d{1}")
     private String isbn;
 
-    private int numberOfPages;
+    private Integer numberOfPages;
 
     public String getAuthor() {
         return author;
@@ -37,11 +37,11 @@ public abstract class Book extends Article {
         this.isbn = isbn;
     }
 
-    public int getNumberOfPages() {
+    public Integer getNumberOfPages() {
         return numberOfPages;
     }
 
-    public void setNumberOfPages(int numberOfPages) {
+    public void setNumberOfPages(Integer numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
 }

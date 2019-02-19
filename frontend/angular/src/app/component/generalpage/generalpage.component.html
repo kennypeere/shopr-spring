@@ -1,3 +1,46 @@
-<p>
-  generalpage works!
-</p>
+<mat-card class="pageCard">
+  <mat-card-header>
+    <mat-card-title class="pageTitle">
+      Welcome To Shopr!
+    </mat-card-title>
+    <mat-card-subtitle>
+      To Shop there, together
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div>
+      <span class="dollar">
+        <i class="material-icons">
+          attach_money
+        </i>
+      </span>
+      <span class="mat-headline">
+        Top value deals
+      </span>
+    </div>
+
+    <div class="grid-container">
+      <span class="grid-item" *ngFor="let article of cheapest8Articles">
+         <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+                <button mat-icon-button color="accent">
+                  <mat-icon>info</mat-icon>
+                </button>
+                {{article.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{article.types}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Price: {{article.price}} €
+          </mat-card-content>
+        </mat-card>
+      </span>
+    </div>
+
+
+  </mat-card-content>
+</mat-card>
