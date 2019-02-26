@@ -6,36 +6,56 @@
   </mat-card-header>
   <mat-card-content>
 
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-horizontal-stepper #stepper>
       <mat-step>
-          <!--<mat-step [stepControl]="firstFormGroup">-->
-          <!--<form [formGroup]="firstFormGroup">-->
           <ng-template matStepLabel>Review your order</ng-template>
           <app-shopping-cart></app-shopping-cart>
           <div>
-            <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
+            <table width="100%">
+              <tr>
+                <td style="text-align: right;">
+                  <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
+                </td>
+              </tr>
+            </table>
           </div>
       </mat-step>
 
       <mat-step>
-        <!--<mat-step>-->
         <form [formGroup]="secondFormGroup">
-          <!--<form>-->
           <ng-template matStepLabel>Payment details</ng-template>
           <app-payment-details [secondFormGroup]="secondFormGroup"></app-payment-details>
           <div>
-            <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
-            <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
+            <table width="100%">
+              <tr>
+                <td style="text-align: left;">
+                  <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
+                </td>
+                <td style="text-align: right;">
+                  <button mat-raised-button color="accent" matStepperNext>Next <i class="material-icons">navigate_next</i></button>
+                </td>
+              </tr>
+            </table>
           </div>
         </form>
       </mat-step>
 
       <mat-step>
         <ng-template matStepLabel>Confirmation</ng-template>
-        You are now done.
+        <app-confirmation></app-confirmation>
         <div>
-          <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
-          <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
+          <table width="100%">
+            <tr>
+              <td style="text-align: left;">
+                <button mat-raised-button color="accent" matStepperPrevious><i class="material-icons">navigate_before</i> Back</button>
+              </td>
+              <td style="text-align: right;">
+                <button mat-raised-button color="accent" (click)="persistOrder()"> <i class="material-icons">send</i>Confirm Order</button>
+              </td>
+            </tr>
+          </table>
+          <!--<button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>-->
+
         </div>
       </mat-step>
     </mat-horizontal-stepper>

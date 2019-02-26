@@ -32,10 +32,6 @@ export class LpDatatableComponent implements OnInit {
 }
 
 
-
-
-
-
 // sortData(sort: Sort) {
 //   console.log('sortData triggered');
 //   const data = this.lps.slice();

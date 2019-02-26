@@ -23,7 +23,6 @@ export class ShoppingCartComponent implements OnInit {
       this.totalPrice += ol.price;
       this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
     }
-
   }
 
   deleteOrderLine(index: number){

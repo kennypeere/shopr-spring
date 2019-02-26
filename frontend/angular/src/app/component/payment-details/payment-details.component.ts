@@ -13,9 +13,20 @@ export class PaymentDetailsComponent implements OnInit {
   public cvc = [/\d/, /\d/, /\d/];
   years: number[] = [];
   months: string[] = [];
+  cardType: string;
+  private oldImageMouseEvent: MouseEvent;
 
+  constructor(private formBuilder: FormBuilder) {
+  }
 
-  constructor(private formBuilder: FormBuilder) { }
+  selectCardType(htmlElement: MouseEvent) {
+    if (this.oldImageMouseEvent !== undefined && this.oldImageMouseEvent.target["className"].endsWith("active")) {
+      this.oldImageMouseEvent.target["className"] = this.oldImageMouseEvent.target["className"].replace("active", "");
+    }
+    this.oldImageMouseEvent = htmlElement;
+    htmlElement.target["className"] += " active";
+
+  }
 
   ngOnInit() {
     this.calculateYears()
@@ -24,20 +35,21 @@ export class PaymentDetailsComponent implements OnInit {
     this.setMonths();
   }
 
-  calculateYears(){
+  calculateYears() {
     let year = new Date().getFullYear();
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++) {
       this.years.push(year + i);
     }
   }
 
-  setMonths(){
-    for (let i=1; i<10 ; i++){
+  setMonths() {
+    for (let i = 1; i < 10; i++) {
       this.months.push('0' + i);
     }
-    for (let i= 0; i<3 ; i++){
+    for (let i = 0; i < 3; i++) {
       this.months.push('1' + i);
     }
   }
+
 
 }

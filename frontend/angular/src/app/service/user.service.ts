@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../entity/User";
-import {BehaviorSubject, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {Article} from "../entity/Article";
 import {OrderLine} from "../entity/OrderLine";
 import {StorageService} from "./storage.service";

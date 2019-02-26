@@ -1,3 +1,39 @@
-.card{
+.card {
   margin: 20px;
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.paymentType {
+  border: 2px solid transparent;
+}
+
+.active {
+  border-color: lime;
+  background-color: lime;
+}
+
+.input-container{
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 0px;
+}
+
+.smallColumn{
+  grid-column: 1 / span 3;
+}
+
+.oneColumn {
+  grid-column: 1 / 2;
+}
+
+.smallColumn > mat-form-field{
+  margin-left: 15px;
+  width: 10%;
+}
+.personal{
+  margin-right: 15px;
 }
