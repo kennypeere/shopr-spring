@@ -1,0 +1,40 @@
+.card {
+  margin: 20px;
+}
+.table {
+  width: 90%;
+  margin: 1.5% auto;
+}
+th{
+  background-color: aliceblue;
+  font-weight: bold;
+}
+.grid-container-price {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  margin: 0 25px 0 25px;
+  text-align: right;
+  font-weight: bold;
+}
+.grid-item-price-text {
+  padding: 10px;
+  text-align: right;
+}
+.grid-item-price-number {
+  padding: 10px;
+  text-align: left;
+}
+.shipment-block {
+  margin: 10px 30px;
+}
+.grid-item {
+  padding: 10px;
+}
+.shipment-title{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.address-block{
+  margin: 0 0 5% 2%;
+}
